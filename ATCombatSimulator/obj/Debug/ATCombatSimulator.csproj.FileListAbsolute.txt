@@ -1,0 +1,11 @@
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\bin\Debug\ATCombatSimulator.exe.config
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\bin\Debug\ATCombatSimulator.exe
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\bin\Debug\ATCombatSimulator.pdb
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.csprojAssemblyReference.cache
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.Properties.Resources.resources
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.UserControlCharacter.resources
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.csproj.GenerateResource.cache
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.csproj.CoreCompileInputs.cache
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.exe
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.pdb
+C:\Users\A0631675\source\repos\ATCombatSimulator\ATCombatSimulator\obj\Debug\ATCombatSimulator.Form1.resources

@@ -42,11 +42,9 @@ namespace ATCombatSimulator
                 if (a.Physical == true) newItem += "Phy. POW ";
                 else newItem += "Mag. POW ";
                 newItem += a.Power;
-                newItem += " ACC ";
-                newItem += a.Accuracy;
-                newItem += "%) [";
+                newItem += ", SP ";
                 newItem += a.SpCost;
-                newItem += " SP]";
+                newItem += ")";
 
                 comboBoxAbilities.Items.Add(newItem);
             }

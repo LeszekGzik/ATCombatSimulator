@@ -1,0 +1,16 @@
+<character name="Racel">
+	<stats>
+		<stat key="level" value="1" />
+		<stat key="ATK" value="10" />
+		<stat key="DEF" value="10" />
+		<stat key="VIT" value="12" />
+		<stat key="SKL" value="14" />
+		<stat key="MATK" value="15" />
+		<stat key="MDEF" value="13" />
+		<stat key="AGI" value="14" />
+		<stat key="LCK" value="12" />
+	</stats>
+	<abilities>
+		<ability name="Pistol shot" type="P" pow="5" acc="90" crit="4" sp="0" />
+	</abilities>
+</character>

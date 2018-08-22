@@ -12,12 +12,17 @@ namespace ATCombatSimulator
         String name;
         int spCost;
         double accuracy;
+        double crit;
         Boolean physical;
+
 
         public int Power { get => power; set => power = value; }
         public int SpCost { get => spCost; set => spCost = value; }
         public double Accuracy { get => accuracy; set => accuracy = value; }
         public bool Physical { get => physical; set => physical = value; }
         public string Name { get => name; set => name = value; }
+        public double Crit { get => crit; set => crit = value; }
+
+        public Ability() { }
     }
 }

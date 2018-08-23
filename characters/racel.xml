@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <character name="Racel">
 	<stats>
 		<stat key="level" value="1" />
@@ -12,5 +13,6 @@
 	</stats>
 	<abilities>
 		<ability name="Pistol shot" type="P" pow="5" acc="90" crit="4" sp="0" />
+		<ability name="Laser shot" type="M" pow="5" acc="120" crit="10" sp="2" />
 	</abilities>
 </character>

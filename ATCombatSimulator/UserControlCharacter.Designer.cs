@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxCharacter = new System.Windows.Forms.GroupBox();
+            this.labelCrit = new System.Windows.Forms.Label();
             this.labelDodge = new System.Windows.Forms.Label();
             this.labelHit = new System.Windows.Forms.Label();
             this.labelSP = new System.Windows.Forms.Label();
@@ -55,8 +56,9 @@
             this.numericUpDownLevel = new System.Windows.Forms.NumericUpDown();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.buttonAddAbility = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonAddAbility = new System.Windows.Forms.Button();
             this.groupBoxCharacter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgi)).BeginInit();
@@ -71,6 +73,8 @@
             // 
             // groupBoxCharacter
             // 
+            this.groupBoxCharacter.Controls.Add(this.labelCrit);
+            this.groupBoxCharacter.Controls.Add(this.buttonDelete);
             this.groupBoxCharacter.Controls.Add(this.buttonEdit);
             this.groupBoxCharacter.Controls.Add(this.buttonAddAbility);
             this.groupBoxCharacter.Controls.Add(this.labelDodge);
@@ -105,6 +109,15 @@
             this.groupBoxCharacter.TabIndex = 1;
             this.groupBoxCharacter.TabStop = false;
             this.groupBoxCharacter.Text = "Character";
+            // 
+            // labelCrit
+            // 
+            this.labelCrit.AutoSize = true;
+            this.labelCrit.Location = new System.Drawing.Point(162, 201);
+            this.labelCrit.Name = "labelCrit";
+            this.labelCrit.Size = new System.Drawing.Size(111, 13);
+            this.labelCrit.TabIndex = 8;
+            this.labelCrit.Text = "Critical hit chance: 0%";
             // 
             // labelDodge
             // 
@@ -145,7 +158,7 @@
             // labelAbilities
             // 
             this.labelAbilities.AutoSize = true;
-            this.labelAbilities.Location = new System.Drawing.Point(24, 329);
+            this.labelAbilities.Location = new System.Drawing.Point(6, 310);
             this.labelAbilities.Name = "labelAbilities";
             this.labelAbilities.Size = new System.Drawing.Size(42, 13);
             this.labelAbilities.TabIndex = 5;
@@ -154,9 +167,9 @@
             // comboBoxAbilities
             // 
             this.comboBoxAbilities.FormattingEnabled = true;
-            this.comboBoxAbilities.Location = new System.Drawing.Point(72, 326);
+            this.comboBoxAbilities.Location = new System.Drawing.Point(9, 327);
             this.comboBoxAbilities.Name = "comboBoxAbilities";
-            this.comboBoxAbilities.Size = new System.Drawing.Size(162, 21);
+            this.comboBoxAbilities.Size = new System.Drawing.Size(182, 21);
             this.comboBoxAbilities.TabIndex = 4;
             this.comboBoxAbilities.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbilities_SelectedIndexChanged);
             // 
@@ -257,7 +270,7 @@
             0,
             0,
             0});
-            this.numericUpDownLck.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownLck.ValueChanged += new System.EventHandler(this.numericUpDownLck_ValueChanged);
             // 
             // numericUpDownAgi
             // 
@@ -275,7 +288,7 @@
             0,
             0,
             0});
-            this.numericUpDownAgi.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownAgi.ValueChanged += new System.EventHandler(this.numericUpDownAgi_ValueChanged);
             // 
             // numericUpDownMdef
             // 
@@ -293,7 +306,7 @@
             0,
             0,
             0});
-            this.numericUpDownMdef.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownMdef.ValueChanged += new System.EventHandler(this.numericUpDownMdef_ValueChanged);
             // 
             // numericUpDownMatk
             // 
@@ -311,7 +324,7 @@
             0,
             0,
             0});
-            this.numericUpDownMatk.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownMatk.ValueChanged += new System.EventHandler(this.numericUpDownMatk_ValueChanged);
             // 
             // numericUpDownSkl
             // 
@@ -329,7 +342,7 @@
             0,
             0,
             0});
-            this.numericUpDownSkl.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownSkl.ValueChanged += new System.EventHandler(this.numericUpDownSkl_ValueChanged);
             // 
             // numericUpDownVit
             // 
@@ -347,7 +360,7 @@
             0,
             0,
             0});
-            this.numericUpDownVit.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownVit.ValueChanged += new System.EventHandler(this.numericUpDownVit_ValueChanged);
             // 
             // numericUpDownDef
             // 
@@ -365,7 +378,7 @@
             0,
             0,
             0});
-            this.numericUpDownDef.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownDef.ValueChanged += new System.EventHandler(this.numericUpDownDef_ValueChanged);
             // 
             // numericUpDownAtk
             // 
@@ -383,7 +396,7 @@
             0,
             0,
             0});
-            this.numericUpDownAtk.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownAtk.ValueChanged += new System.EventHandler(this.numericUpDownAtk_ValueChanged);
             // 
             // numericUpDownLevel
             // 
@@ -401,7 +414,7 @@
             0,
             0,
             0});
-            this.numericUpDownLevel.ValueChanged += new System.EventHandler(this.upDownChanged);
+            this.numericUpDownLevel.ValueChanged += new System.EventHandler(this.numericUpDownLevel_ValueChanged);
             // 
             // labelName
             // 
@@ -420,23 +433,35 @@
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
-            // buttonAddAbility
+            // buttonDelete
             // 
-            this.buttonAddAbility.Location = new System.Drawing.Point(240, 324);
-            this.buttonAddAbility.Name = "buttonAddAbility";
-            this.buttonAddAbility.Size = new System.Drawing.Size(40, 23);
-            this.buttonAddAbility.TabIndex = 7;
-            this.buttonAddAbility.Text = "Add";
-            this.buttonAddAbility.UseVisualStyleBackColor = true;
+            this.buttonDelete.Image = global::ATCombatSimulator.Properties.Resources.Close_16x;
+            this.buttonDelete.Location = new System.Drawing.Point(256, 327);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(24, 24);
+            this.buttonDelete.TabIndex = 7;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(240, 349);
+            this.buttonEdit.Image = global::ATCombatSimulator.Properties.Resources.Edit_16x;
+            this.buttonEdit.Location = new System.Drawing.Point(227, 327);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(40, 23);
+            this.buttonEdit.Size = new System.Drawing.Size(24, 24);
             this.buttonEdit.TabIndex = 7;
-            this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonAddAbility
+            // 
+            this.buttonAddAbility.Image = global::ATCombatSimulator.Properties.Resources.Add_16x;
+            this.buttonAddAbility.Location = new System.Drawing.Point(197, 327);
+            this.buttonAddAbility.Name = "buttonAddAbility";
+            this.buttonAddAbility.Size = new System.Drawing.Size(24, 24);
+            this.buttonAddAbility.TabIndex = 7;
+            this.buttonAddAbility.UseVisualStyleBackColor = true;
+            this.buttonAddAbility.Click += new System.EventHandler(this.buttonAddAbility_Click);
             // 
             // UserControlCharacter
             // 
@@ -491,5 +516,7 @@
         private System.Windows.Forms.Label labelHit;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAddAbility;
+        private System.Windows.Forms.Label labelCrit;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

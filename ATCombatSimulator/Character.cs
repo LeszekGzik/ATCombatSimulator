@@ -12,20 +12,28 @@ namespace ATCombatSimulator
         public String name;
         public List<Ability> abilities;
         public Ability selectedAbility;
-        public int level;
+        public int level = 1;
         public int maxHP;
         public int currentHP;
         public int maxSP;
         public int currentSP;
 
-        public int ATK;
-        public int DEF;
-        public int VIT;
-        public int SKL;
-        public int MDEF;
-        public int MATK;
-        public int AGI;
-        public int LCK;
+        public int ATK = 1;
+        public int DEF = 1;
+        public int VIT = 1;
+        public int SKL = 1;
+        public int MDEF = 1;
+        public int MATK = 1;
+        public int AGI = 1;
+        public int LCK = 1;
+
+        public Character()
+        {
+            abilities = new List<Ability>();
+            abilities.Add(new Ability("default", true, 0, 0, 0, 0));
+            selectedAbility = abilities[0];
+            reset();
+        }
 
         public void reset()
         {
@@ -74,19 +82,96 @@ namespace ATCombatSimulator
                 }
             }
 
+            abilities.Clear();
             foreach (XmlNode abilityNode in doc.SelectNodes("//ability"))
             {
                 Ability a = new Ability();
                 a.Name = abilityNode.Attributes["name"].Value;
                 a.Power = Int32.Parse(abilityNode.Attributes["pow"].Value);
-                a.Crit = Double.Parse(abilityNode.Attributes["crit"].Value);
-                a.Accuracy = Double.Parse(abilityNode.Attributes["acc"].Value);
+                a.Crit = Int32.Parse(abilityNode.Attributes["crit"].Value);
+                a.Accuracy = Int32.Parse(abilityNode.Attributes["acc"].Value);
                 a.SpCost = Int32.Parse(abilityNode.Attributes["sp"].Value);
                 a.Physical = (abilityNode.Attributes["type"].Value == "P");
                 abilities.Add(a);
             }
             reset();
             selectedAbility = abilities[0];
+        }
+
+        public void saveToXML(String fileName)
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlNode docNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(docNode);
+
+            XmlElement characterNode = doc.CreateElement("character");
+            characterNode.SetAttribute("name", name);
+            doc.AppendChild(characterNode);
+
+            XmlElement statsNode = doc.CreateElement("stats");
+            characterNode.AppendChild(statsNode);
+
+            XmlElement statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "level");
+            statNode.SetAttribute("value", level.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "ATK");
+            statNode.SetAttribute("value", ATK.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "DEF");
+            statNode.SetAttribute("value", DEF.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "VIT");
+            statNode.SetAttribute("value", VIT.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "SKL");
+            statNode.SetAttribute("value", SKL.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "MATK");
+            statNode.SetAttribute("value", MATK.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "MDEF");
+            statNode.SetAttribute("value", MDEF.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "AGI");
+            statNode.SetAttribute("value", AGI.ToString());
+            statsNode.AppendChild(statNode);
+
+            statNode = doc.CreateElement("stat");
+            statNode.SetAttribute("key", "LCK");
+            statNode.SetAttribute("value", LCK.ToString());
+            statsNode.AppendChild(statNode);
+
+            XmlElement abilitiesNode = doc.CreateElement("abilities");
+            characterNode.AppendChild(abilitiesNode);
+
+            foreach(Ability a in abilities)
+            {
+                XmlElement abilityNode = doc.CreateElement("ability");
+                abilityNode.SetAttribute("name", a.Name);
+                if (a.Physical) abilityNode.SetAttribute("type", "P");
+                else abilityNode.SetAttribute("type", "M");
+                abilityNode.SetAttribute("pow", a.Power.ToString());
+                abilityNode.SetAttribute("acc", a.Accuracy.ToString());
+                abilityNode.SetAttribute("crit", a.Crit.ToString());
+                abilityNode.SetAttribute("sp", a.SpCost.ToString());
+                abilitiesNode.AppendChild(abilityNode);
+            }
+            doc.Save(fileName);
         }
     }
 }

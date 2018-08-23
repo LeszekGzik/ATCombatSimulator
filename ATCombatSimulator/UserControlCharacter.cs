@@ -18,8 +18,8 @@ namespace ATCombatSimulator
 
         public UserControlCharacter()
         {
-            character = new Character();
             InitializeComponent();
+            initializeWith(new Character());
         }
 
         public void initializeWith(Character _character)
@@ -36,6 +36,7 @@ namespace ATCombatSimulator
             numericUpDownAgi.Value = character.AGI;
             numericUpDownLck.Value = character.LCK;
 
+            comboBoxAbilities.Items.Clear();
             foreach(Ability a in character.abilities)
             {
                 String newItem = a.Name + " (";
@@ -49,12 +50,12 @@ namespace ATCombatSimulator
                 comboBoxAbilities.Items.Add(newItem);
             }
             comboBoxAbilities.SelectedIndex = 0;
+            character.reset();
             refresh();
         }
 
         public void refresh()
         {
-            character.reset();
             labelHP.Text = "HP: " + character.currentHP + "/" + character.maxHP;
             labelSP.Text = "SP: " + character.currentSP + "/" + character.maxSP;
             labelHit.Text = "Hit chance: " + (character.selectedAbility.Accuracy + 2 * character.AGI) + "%";
@@ -78,6 +79,7 @@ namespace ATCombatSimulator
         private void numericUpDownLevel_ValueChanged(object sender, EventArgs e)
         {
             character.level = Convert.ToInt32(numericUpDownLevel.Value);
+            character.reset();
             refresh();
         }
 
@@ -96,12 +98,14 @@ namespace ATCombatSimulator
         private void numericUpDownVit_ValueChanged(object sender, EventArgs e)
         {
             character.VIT = Convert.ToInt32(numericUpDownVit.Value);
+            character.reset();
             refresh();
         }
 
         private void numericUpDownSkl_ValueChanged(object sender, EventArgs e)
         {
             character.SKL = Convert.ToInt32(numericUpDownSkl.Value);
+            character.reset();
             refresh();
         }
 

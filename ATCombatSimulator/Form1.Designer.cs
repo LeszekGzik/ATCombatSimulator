@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userControlCharacter2 = new ATCombatSimulator.UserControlCharacter();
-            this.userControlCharacter1 = new ATCombatSimulator.UserControlCharacter();
             this.buttonAttack1 = new System.Windows.Forms.Button();
             this.buttonAttack2 = new System.Windows.Forms.Button();
             this.richTextBoxResults = new System.Windows.Forms.RichTextBox();
@@ -43,21 +41,9 @@
             this.buttonNewCharacter1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.userControlCharacter1 = new ATCombatSimulator.UserControlCharacter();
+            this.userControlCharacter2 = new ATCombatSimulator.UserControlCharacter();
             this.SuspendLayout();
-            // 
-            // userControlCharacter2
-            // 
-            this.userControlCharacter2.Location = new System.Drawing.Point(619, 37);
-            this.userControlCharacter2.Name = "userControlCharacter2";
-            this.userControlCharacter2.Size = new System.Drawing.Size(302, 388);
-            this.userControlCharacter2.TabIndex = 0;
-            // 
-            // userControlCharacter1
-            // 
-            this.userControlCharacter1.Location = new System.Drawing.Point(12, 37);
-            this.userControlCharacter1.Name = "userControlCharacter1";
-            this.userControlCharacter1.Size = new System.Drawing.Size(302, 388);
-            this.userControlCharacter1.TabIndex = 0;
             // 
             // buttonAttack1
             // 
@@ -68,6 +54,7 @@
             this.buttonAttack1.TabIndex = 2;
             this.buttonAttack1.Text = "Attack!";
             this.buttonAttack1.UseVisualStyleBackColor = true;
+            this.buttonAttack1.Click += new System.EventHandler(this.buttonAttack1_Click);
             // 
             // buttonAttack2
             // 
@@ -78,6 +65,7 @@
             this.buttonAttack2.TabIndex = 2;
             this.buttonAttack2.Text = "Attack!";
             this.buttonAttack2.UseVisualStyleBackColor = true;
+            this.buttonAttack2.Click += new System.EventHandler(this.buttonAttack2_Click);
             // 
             // richTextBoxResults
             // 
@@ -95,6 +83,7 @@
             this.buttonReset.TabIndex = 4;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // buttonStartFight
             // 
@@ -104,6 +93,7 @@
             this.buttonStartFight.TabIndex = 4;
             this.buttonStartFight.Text = "Start fight";
             this.buttonStartFight.UseVisualStyleBackColor = true;
+            this.buttonStartFight.Click += new System.EventHandler(this.buttonStartFight_Click);
             // 
             // buttonSaveCharacter2
             // 
@@ -169,11 +159,27 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // userControlCharacter1
+            // 
+            this.userControlCharacter1.Location = new System.Drawing.Point(12, 36);
+            this.userControlCharacter1.Name = "userControlCharacter1";
+            this.userControlCharacter1.Size = new System.Drawing.Size(302, 388);
+            this.userControlCharacter1.TabIndex = 5;
+            // 
+            // userControlCharacter2
+            // 
+            this.userControlCharacter2.Location = new System.Drawing.Point(619, 36);
+            this.userControlCharacter2.Name = "userControlCharacter2";
+            this.userControlCharacter2.Size = new System.Drawing.Size(302, 388);
+            this.userControlCharacter2.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 475);
+            this.Controls.Add(this.userControlCharacter2);
+            this.Controls.Add(this.userControlCharacter1);
             this.Controls.Add(this.buttonStartFight);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.richTextBoxResults);
@@ -185,8 +191,6 @@
             this.Controls.Add(this.buttonNewCharacter2);
             this.Controls.Add(this.buttonLoadCharacter1);
             this.Controls.Add(this.buttonNewCharacter1);
-            this.Controls.Add(this.userControlCharacter1);
-            this.Controls.Add(this.userControlCharacter2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -197,8 +201,6 @@
         private System.Windows.Forms.Button buttonNewCharacter1;
         private System.Windows.Forms.Button buttonLoadCharacter1;
         private System.Windows.Forms.Button buttonSaveCharacter1;
-        private UserControlCharacter userControlCharacter2;
-        private UserControlCharacter userControlCharacter1;
         private System.Windows.Forms.Button buttonNewCharacter2;
         private System.Windows.Forms.Button buttonLoadCharacter2;
         private System.Windows.Forms.Button buttonSaveCharacter2;
@@ -209,6 +211,8 @@
         private System.Windows.Forms.Button buttonStartFight;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private UserControlCharacter userControlCharacter1;
+        private UserControlCharacter userControlCharacter2;
     }
 }
 

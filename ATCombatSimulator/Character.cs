@@ -173,5 +173,59 @@ namespace ATCombatSimulator
             }
             doc.Save(fileName);
         }
+
+        internal bool isDead()
+        {
+            return (currentHP <= 0);
+        }
+
+        public bool hasEnoughSP()
+        {
+            return (currentSP >= selectedAbility.SpCost);
+        }
+
+        internal String attack(Character target)
+        {
+            Random random = new Random();
+            String result = "";
+            result += name + " used " + selectedAbility.Name + " ";
+            currentSP -= selectedAbility.SpCost;
+
+            int hitPercent = selectedAbility.Accuracy + 2 * AGI - 2 * target.AGI;
+            int critPercent = selectedAbility.Crit + LCK - target.LCK;
+            double damage;
+            //sprawdzenie trafienia
+            if (random.Next(0, 100) < hitPercent)
+            {
+                result += "and hit";
+                //obliczenie obrażeń
+                if (selectedAbility.Physical)
+                {
+                    damage = (double)(selectedAbility.Power * ATK * (10 + level)) / (DEF * 10);
+                }
+                else
+                {
+                    damage = (double)(selectedAbility.Power * MATK * (10 + level)) / (MDEF * 10);
+                }
+                damage *= (random.Next(90, 111) / 100.0);
+                //sprawdzenie krytyka
+                if (random.Next(0, 100) < critPercent)
+                {
+                    result += " critically! ";
+                    damage *= 1.5;
+                }
+                else
+                {
+                    result += ". ";
+                }
+                target.currentHP -= (int)damage;
+                result += target.name + " took " + (int)damage + " damage.\n";
+            }
+            else
+            {
+                result += "but missed!\n";
+            }
+            return result;
+        }
     }
 }

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<character name="Cale">
+  <stats>
+    <stat key="level" value="10" />
+    <stat key="ATK" value="17" />
+    <stat key="DEF" value="12" />
+    <stat key="VIT" value="10" />
+    <stat key="SKL" value="10" />
+    <stat key="MATK" value="11" />
+    <stat key="MDEF" value="8" />
+    <stat key="AGI" value="16" />
+    <stat key="LCK" value="16" />
+  </stats>
+  <abilities>
+    <ability name="Arrow" type="P" pow="5" acc="90" crit="6" sp="0" />
+    <ability name="Poison arrow" type="P" pow="4" acc="90" crit="20" sp="1" />
+    <ability name="Thunderbolt" type="M" pow="10" acc="65" crit="6" sp="3" />
+  </abilities>
+</character>

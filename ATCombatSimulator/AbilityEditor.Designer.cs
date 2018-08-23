@@ -39,8 +39,8 @@
             this.labelSpCost = new System.Windows.Forms.Label();
             this.numericUpDownSP = new System.Windows.Forms.NumericUpDown();
             this.groupBoxType = new System.Windows.Forms.GroupBox();
-            this.radioButtonP = new System.Windows.Forms.RadioButton();
             this.radioButtonM = new System.Windows.Forms.RadioButton();
+            this.radioButtonP = new System.Windows.Forms.RadioButton();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).BeginInit();
@@ -161,17 +161,6 @@
             this.groupBoxType.TabStop = false;
             this.groupBoxType.Text = "Ability type";
             // 
-            // radioButtonP
-            // 
-            this.radioButtonP.AutoSize = true;
-            this.radioButtonP.Location = new System.Drawing.Point(7, 28);
-            this.radioButtonP.Name = "radioButtonP";
-            this.radioButtonP.Size = new System.Drawing.Size(120, 17);
-            this.radioButtonP.TabIndex = 0;
-            this.radioButtonP.TabStop = true;
-            this.radioButtonP.Text = "Physical (ATK/DEF)";
-            this.radioButtonP.UseVisualStyleBackColor = true;
-            // 
             // radioButtonM
             // 
             this.radioButtonM.AutoSize = true;
@@ -179,9 +168,20 @@
             this.radioButtonM.Name = "radioButtonM";
             this.radioButtonM.Size = new System.Drawing.Size(136, 17);
             this.radioButtonM.TabIndex = 0;
-            this.radioButtonM.TabStop = true;
             this.radioButtonM.Text = "Magical (MATK/MDEF)";
             this.radioButtonM.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonP
+            // 
+            this.radioButtonP.AutoSize = true;
+            this.radioButtonP.Checked = true;
+            this.radioButtonP.Location = new System.Drawing.Point(7, 28);
+            this.radioButtonP.Name = "radioButtonP";
+            this.radioButtonP.Size = new System.Drawing.Size(120, 17);
+            this.radioButtonP.TabIndex = 0;
+            this.radioButtonP.TabStop = true;
+            this.radioButtonP.Text = "Physical (ATK/DEF)";
+            this.radioButtonP.UseVisualStyleBackColor = true;
             // 
             // buttonOK
             // 

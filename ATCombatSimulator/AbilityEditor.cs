@@ -35,6 +35,7 @@ namespace ATCombatSimulator
             numericUpDownPower.Value = ability.Power;
             numericUpDownSP.Value = ability.SpCost;
             radioButtonP.Checked = ability.Physical;
+            radioButtonM.Checked = !ability.Physical;
         }
 
         private void buttonOK_Click(object sender, EventArgs e)

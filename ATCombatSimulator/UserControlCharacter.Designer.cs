@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBoxCharacter = new System.Windows.Forms.GroupBox();
-            this.labelCrit = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonAddAbility = new System.Windows.Forms.Button();
             this.labelDodge = new System.Windows.Forms.Label();
-            this.labelHit = new System.Windows.Forms.Label();
             this.labelSP = new System.Windows.Forms.Label();
             this.labelHP = new System.Windows.Forms.Label();
             this.labelAbilities = new System.Windows.Forms.Label();
@@ -56,9 +57,6 @@
             this.numericUpDownLevel = new System.Windows.Forms.NumericUpDown();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonAddAbility = new System.Windows.Forms.Button();
             this.groupBoxCharacter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgi)).BeginInit();
@@ -73,12 +71,10 @@
             // 
             // groupBoxCharacter
             // 
-            this.groupBoxCharacter.Controls.Add(this.labelCrit);
             this.groupBoxCharacter.Controls.Add(this.buttonDelete);
             this.groupBoxCharacter.Controls.Add(this.buttonEdit);
             this.groupBoxCharacter.Controls.Add(this.buttonAddAbility);
             this.groupBoxCharacter.Controls.Add(this.labelDodge);
-            this.groupBoxCharacter.Controls.Add(this.labelHit);
             this.groupBoxCharacter.Controls.Add(this.labelSP);
             this.groupBoxCharacter.Controls.Add(this.labelHP);
             this.groupBoxCharacter.Controls.Add(this.labelAbilities);
@@ -110,32 +106,44 @@
             this.groupBoxCharacter.TabStop = false;
             this.groupBoxCharacter.Text = "Character";
             // 
-            // labelCrit
+            // buttonDelete
             // 
-            this.labelCrit.AutoSize = true;
-            this.labelCrit.Location = new System.Drawing.Point(162, 201);
-            this.labelCrit.Name = "labelCrit";
-            this.labelCrit.Size = new System.Drawing.Size(111, 13);
-            this.labelCrit.TabIndex = 8;
-            this.labelCrit.Text = "Critical hit chance: 0%";
+            this.buttonDelete.Image = global::ATCombatSimulator.Properties.Resources.Close_16x;
+            this.buttonDelete.Location = new System.Drawing.Point(256, 327);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(24, 24);
+            this.buttonDelete.TabIndex = 7;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Image = global::ATCombatSimulator.Properties.Resources.Edit_16x;
+            this.buttonEdit.Location = new System.Drawing.Point(227, 327);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(24, 24);
+            this.buttonEdit.TabIndex = 7;
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonAddAbility
+            // 
+            this.buttonAddAbility.Image = global::ATCombatSimulator.Properties.Resources.Add_16x;
+            this.buttonAddAbility.Location = new System.Drawing.Point(197, 327);
+            this.buttonAddAbility.Name = "buttonAddAbility";
+            this.buttonAddAbility.Size = new System.Drawing.Size(24, 24);
+            this.buttonAddAbility.TabIndex = 7;
+            this.buttonAddAbility.UseVisualStyleBackColor = true;
+            this.buttonAddAbility.Click += new System.EventHandler(this.buttonAddAbility_Click);
             // 
             // labelDodge
             // 
             this.labelDodge.AutoSize = true;
-            this.labelDodge.Location = new System.Drawing.Point(160, 175);
+            this.labelDodge.Location = new System.Drawing.Point(160, 149);
             this.labelDodge.Name = "labelDodge";
             this.labelDodge.Size = new System.Drawing.Size(98, 13);
             this.labelDodge.TabIndex = 6;
             this.labelDodge.Text = "Dodge chance: 0%";
-            // 
-            // labelHit
-            // 
-            this.labelHit.AutoSize = true;
-            this.labelHit.Location = new System.Drawing.Point(160, 149);
-            this.labelHit.Name = "labelHit";
-            this.labelHit.Size = new System.Drawing.Size(79, 13);
-            this.labelHit.TabIndex = 6;
-            this.labelHit.Text = "Hit chance: 0%";
             // 
             // labelSP
             // 
@@ -433,36 +441,6 @@
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Image = global::ATCombatSimulator.Properties.Resources.Close_16x;
-            this.buttonDelete.Location = new System.Drawing.Point(256, 327);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(24, 24);
-            this.buttonDelete.TabIndex = 7;
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Image = global::ATCombatSimulator.Properties.Resources.Edit_16x;
-            this.buttonEdit.Location = new System.Drawing.Point(227, 327);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(24, 24);
-            this.buttonEdit.TabIndex = 7;
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonAddAbility
-            // 
-            this.buttonAddAbility.Image = global::ATCombatSimulator.Properties.Resources.Add_16x;
-            this.buttonAddAbility.Location = new System.Drawing.Point(197, 327);
-            this.buttonAddAbility.Name = "buttonAddAbility";
-            this.buttonAddAbility.Size = new System.Drawing.Size(24, 24);
-            this.buttonAddAbility.TabIndex = 7;
-            this.buttonAddAbility.UseVisualStyleBackColor = true;
-            this.buttonAddAbility.Click += new System.EventHandler(this.buttonAddAbility_Click);
-            // 
             // UserControlCharacter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,10 +491,8 @@
         private System.Windows.Forms.Label labelAbilities;
         private System.Windows.Forms.ComboBox comboBoxAbilities;
         private System.Windows.Forms.Label labelDodge;
-        private System.Windows.Forms.Label labelHit;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAddAbility;
-        private System.Windows.Forms.Label labelCrit;
         private System.Windows.Forms.Button buttonDelete;
     }
 }

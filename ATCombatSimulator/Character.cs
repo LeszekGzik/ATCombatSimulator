@@ -30,7 +30,7 @@ namespace ATCombatSimulator
         public Character()
         {
             abilities = new List<Ability>();
-            abilities.Add(new Ability("default", true, 0, 0, 0, 0));
+            abilities.Add(new Ability("Wait", 0));
             selectedAbility = abilities[0];
             reset();
         }
@@ -87,11 +87,11 @@ namespace ATCombatSimulator
             {
                 Ability a = new Ability();
                 a.Name = abilityNode.Attributes["name"].Value;
-                a.Power = Int32.Parse(abilityNode.Attributes["pow"].Value);
+                /*a.Power = Int32.Parse(abilityNode.Attributes["pow"].Value);
                 a.Crit = Int32.Parse(abilityNode.Attributes["crit"].Value);
                 a.Accuracy = Int32.Parse(abilityNode.Attributes["acc"].Value);
                 a.SpCost = Int32.Parse(abilityNode.Attributes["sp"].Value);
-                a.Physical = (abilityNode.Attributes["type"].Value == "P");
+                a.Physical = (abilityNode.Attributes["type"].Value == "P");*/
                 abilities.Add(a);
             }
             reset();
@@ -163,11 +163,11 @@ namespace ATCombatSimulator
             {
                 XmlElement abilityNode = doc.CreateElement("ability");
                 abilityNode.SetAttribute("name", a.Name);
-                if (a.Physical) abilityNode.SetAttribute("type", "P");
+                /*if (a.Physical) abilityNode.SetAttribute("type", "P");
                 else abilityNode.SetAttribute("type", "M");
                 abilityNode.SetAttribute("pow", a.Power.ToString());
                 abilityNode.SetAttribute("acc", a.Accuracy.ToString());
-                abilityNode.SetAttribute("crit", a.Crit.ToString());
+                abilityNode.SetAttribute("crit", a.Crit.ToString());*/
                 abilityNode.SetAttribute("sp", a.SpCost.ToString());
                 abilitiesNode.AppendChild(abilityNode);
             }
@@ -186,46 +186,7 @@ namespace ATCombatSimulator
 
         internal String attack(Character target)
         {
-            Random random = new Random();
-            String result = "";
-            result += name + " used " + selectedAbility.Name + " ";
-            currentSP -= selectedAbility.SpCost;
-
-            int hitPercent = selectedAbility.Accuracy + 2 * AGI - 2 * target.AGI;
-            int critPercent = selectedAbility.Crit + LCK - target.LCK;
-            double damage;
-            //sprawdzenie trafienia
-            if (random.Next(0, 100) < hitPercent)
-            {
-                result += "and hit";
-                //obliczenie obrażeń
-                if (selectedAbility.Physical)
-                {
-                    damage = (double)(selectedAbility.Power * ATK * (10 + level)) / (target.DEF * 10);
-                }
-                else
-                {
-                    damage = (double)(selectedAbility.Power * MATK * (10 + level)) / (target.MDEF * 10);
-                }
-                damage *= (random.Next(90, 111) / 100.0);
-                //sprawdzenie krytyka
-                if (random.Next(0, 100) < critPercent)
-                {
-                    result += " critically! ";
-                    damage *= 1.5;
-                }
-                else
-                {
-                    result += ". ";
-                }
-                target.currentHP -= (int)damage;
-                result += target.name + " took " + (int)damage + " damage.\n";
-            }
-            else
-            {
-                result += "but missed!\n";
-            }
-            return result;
+            return selectedAbility.execute(this, target);
         }
     }
 }

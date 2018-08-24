@@ -30,31 +30,26 @@
         {
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
-            this.labelPower = new System.Windows.Forms.Label();
-            this.numericUpDownPower = new System.Windows.Forms.NumericUpDown();
-            this.labelAccuracy = new System.Windows.Forms.Label();
-            this.numericUpDownAccuracy = new System.Windows.Forms.NumericUpDown();
-            this.labelCrit = new System.Windows.Forms.Label();
-            this.numericUpDownCrit = new System.Windows.Forms.NumericUpDown();
             this.labelSpCost = new System.Windows.Forms.Label();
             this.numericUpDownSP = new System.Windows.Forms.NumericUpDown();
-            this.groupBoxType = new System.Windows.Forms.GroupBox();
-            this.radioButtonM = new System.Windows.Forms.RadioButton();
-            this.radioButtonP = new System.Windows.Forms.RadioButton();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccuracy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCrit)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnEffect = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPower = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnAccuracy = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnCritical = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnAddButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColumnRemoveButton = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSP)).BeginInit();
-            this.groupBoxType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(55, 13);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(146, 20);
+            this.textBoxName.Size = new System.Drawing.Size(213, 20);
             this.textBoxName.TabIndex = 0;
             // 
             // labelName
@@ -66,73 +61,10 @@
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Name";
             // 
-            // labelPower
-            // 
-            this.labelPower.AutoSize = true;
-            this.labelPower.Location = new System.Drawing.Point(12, 46);
-            this.labelPower.Name = "labelPower";
-            this.labelPower.Size = new System.Drawing.Size(37, 13);
-            this.labelPower.TabIndex = 2;
-            this.labelPower.Text = "Power";
-            // 
-            // numericUpDownPower
-            // 
-            this.numericUpDownPower.Location = new System.Drawing.Point(122, 44);
-            this.numericUpDownPower.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownPower.Name = "numericUpDownPower";
-            this.numericUpDownPower.Size = new System.Drawing.Size(43, 20);
-            this.numericUpDownPower.TabIndex = 3;
-            // 
-            // labelAccuracy
-            // 
-            this.labelAccuracy.AutoSize = true;
-            this.labelAccuracy.Location = new System.Drawing.Point(12, 72);
-            this.labelAccuracy.Name = "labelAccuracy";
-            this.labelAccuracy.Size = new System.Drawing.Size(95, 13);
-            this.labelAccuracy.TabIndex = 2;
-            this.labelAccuracy.Text = "Base accuracy (%)";
-            // 
-            // numericUpDownAccuracy
-            // 
-            this.numericUpDownAccuracy.Location = new System.Drawing.Point(122, 70);
-            this.numericUpDownAccuracy.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownAccuracy.Name = "numericUpDownAccuracy";
-            this.numericUpDownAccuracy.Size = new System.Drawing.Size(43, 20);
-            this.numericUpDownAccuracy.TabIndex = 3;
-            // 
-            // labelCrit
-            // 
-            this.labelCrit.AutoSize = true;
-            this.labelCrit.Location = new System.Drawing.Point(12, 97);
-            this.labelCrit.Name = "labelCrit";
-            this.labelCrit.Size = new System.Drawing.Size(104, 13);
-            this.labelCrit.TabIndex = 2;
-            this.labelCrit.Text = "Base crit chance (%)";
-            // 
-            // numericUpDownCrit
-            // 
-            this.numericUpDownCrit.Location = new System.Drawing.Point(122, 95);
-            this.numericUpDownCrit.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.numericUpDownCrit.Name = "numericUpDownCrit";
-            this.numericUpDownCrit.Size = new System.Drawing.Size(43, 20);
-            this.numericUpDownCrit.TabIndex = 3;
-            // 
             // labelSpCost
             // 
             this.labelSpCost.AutoSize = true;
-            this.labelSpCost.Location = new System.Drawing.Point(12, 123);
+            this.labelSpCost.Location = new System.Drawing.Point(285, 16);
             this.labelSpCost.Name = "labelSpCost";
             this.labelSpCost.Size = new System.Drawing.Size(44, 13);
             this.labelSpCost.TabIndex = 2;
@@ -140,7 +72,7 @@
             // 
             // numericUpDownSP
             // 
-            this.numericUpDownSP.Location = new System.Drawing.Point(122, 121);
+            this.numericUpDownSP.Location = new System.Drawing.Point(335, 14);
             this.numericUpDownSP.Maximum = new decimal(new int[] {
             999,
             0,
@@ -150,42 +82,9 @@
             this.numericUpDownSP.Size = new System.Drawing.Size(43, 20);
             this.numericUpDownSP.TabIndex = 3;
             // 
-            // groupBoxType
-            // 
-            this.groupBoxType.Controls.Add(this.radioButtonM);
-            this.groupBoxType.Controls.Add(this.radioButtonP);
-            this.groupBoxType.Location = new System.Drawing.Point(222, 39);
-            this.groupBoxType.Name = "groupBoxType";
-            this.groupBoxType.Size = new System.Drawing.Size(164, 102);
-            this.groupBoxType.TabIndex = 4;
-            this.groupBoxType.TabStop = false;
-            this.groupBoxType.Text = "Ability type";
-            // 
-            // radioButtonM
-            // 
-            this.radioButtonM.AutoSize = true;
-            this.radioButtonM.Location = new System.Drawing.Point(6, 60);
-            this.radioButtonM.Name = "radioButtonM";
-            this.radioButtonM.Size = new System.Drawing.Size(136, 17);
-            this.radioButtonM.TabIndex = 0;
-            this.radioButtonM.Text = "Magical (MATK/MDEF)";
-            this.radioButtonM.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonP
-            // 
-            this.radioButtonP.AutoSize = true;
-            this.radioButtonP.Checked = true;
-            this.radioButtonP.Location = new System.Drawing.Point(7, 28);
-            this.radioButtonP.Name = "radioButtonP";
-            this.radioButtonP.Size = new System.Drawing.Size(120, 17);
-            this.radioButtonP.TabIndex = 0;
-            this.radioButtonP.TabStop = true;
-            this.radioButtonP.Text = "Physical (ATK/DEF)";
-            this.radioButtonP.UseVisualStyleBackColor = true;
-            // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(17, 188);
+            this.buttonOK.Location = new System.Drawing.Point(17, 249);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 5;
@@ -195,7 +94,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(289, 188);
+            this.buttonCancel.Location = new System.Drawing.Point(288, 249);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 5;
@@ -203,32 +102,585 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnEffect,
+            this.ColumnPower,
+            this.ColumnAccuracy,
+            this.ColumnCritical,
+            this.ColumnAddButton,
+            this.ColumnRemoveButton});
+            this.dataGridView1.Location = new System.Drawing.Point(17, 54);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(361, 150);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // ColumnEffect
+            // 
+            this.ColumnEffect.HeaderText = "Effect";
+            this.ColumnEffect.Name = "ColumnEffect";
+            this.ColumnEffect.ReadOnly = true;
+            this.ColumnEffect.Width = 60;
+            // 
+            // ColumnPower
+            // 
+            this.ColumnPower.HeaderText = "Power";
+            this.ColumnPower.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99",
+            "100",
+            "101",
+            "102",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "122",
+            "123",
+            "124",
+            "125",
+            "126",
+            "127",
+            "128",
+            "129",
+            "130",
+            "131",
+            "132",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "148",
+            "149",
+            "150",
+            "151",
+            "152",
+            "153",
+            "154",
+            "155",
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162",
+            "163",
+            "164",
+            "165",
+            "166",
+            "167",
+            "168",
+            "169",
+            "170",
+            "171",
+            "172",
+            "173",
+            "174",
+            "175",
+            "176",
+            "177",
+            "178",
+            "179",
+            "180",
+            "181",
+            "182",
+            "183",
+            "184",
+            "185",
+            "186",
+            "187",
+            "188",
+            "189",
+            "190",
+            "191",
+            "192",
+            "193",
+            "194",
+            "195",
+            "196",
+            "197",
+            "198",
+            "199",
+            "200"});
+            this.ColumnPower.Name = "ColumnPower";
+            this.ColumnPower.ReadOnly = true;
+            this.ColumnPower.Width = 60;
+            // 
+            // ColumnAccuracy
+            // 
+            this.ColumnAccuracy.HeaderText = "Accuracy";
+            this.ColumnAccuracy.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99",
+            "100",
+            "101",
+            "102",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "112",
+            "113",
+            "114",
+            "115",
+            "116",
+            "117",
+            "118",
+            "119",
+            "120",
+            "121",
+            "122",
+            "123",
+            "124",
+            "125",
+            "126",
+            "127",
+            "128",
+            "129",
+            "130",
+            "131",
+            "132",
+            "133",
+            "134",
+            "135",
+            "136",
+            "137",
+            "138",
+            "139",
+            "140",
+            "141",
+            "142",
+            "143",
+            "144",
+            "145",
+            "146",
+            "147",
+            "148",
+            "149",
+            "150",
+            "151",
+            "152",
+            "153",
+            "154",
+            "155",
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162",
+            "163",
+            "164",
+            "165",
+            "166",
+            "167",
+            "168",
+            "169",
+            "170",
+            "171",
+            "172",
+            "173",
+            "174",
+            "175",
+            "176",
+            "177",
+            "178",
+            "179",
+            "180",
+            "181",
+            "182",
+            "183",
+            "184",
+            "185",
+            "186",
+            "187",
+            "188",
+            "189",
+            "190",
+            "191",
+            "192",
+            "193",
+            "194",
+            "195",
+            "196",
+            "197",
+            "198",
+            "199",
+            "200"});
+            this.ColumnAccuracy.Name = "ColumnAccuracy";
+            this.ColumnAccuracy.ReadOnly = true;
+            this.ColumnAccuracy.Width = 60;
+            // 
+            // ColumnCritical
+            // 
+            this.ColumnCritical.HeaderText = "Critical";
+            this.ColumnCritical.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99",
+            "100"});
+            this.ColumnCritical.Name = "ColumnCritical";
+            this.ColumnCritical.ReadOnly = true;
+            this.ColumnCritical.Width = 60;
+            // 
+            // ColumnAddButton
+            // 
+            this.ColumnAddButton.HeaderText = "";
+            this.ColumnAddButton.Name = "ColumnAddButton";
+            this.ColumnAddButton.ReadOnly = true;
+            this.ColumnAddButton.Width = 30;
+            // 
+            // ColumnRemoveButton
+            // 
+            this.ColumnRemoveButton.HeaderText = "";
+            this.ColumnRemoveButton.Name = "ColumnRemoveButton";
+            this.ColumnRemoveButton.ReadOnly = true;
+            this.ColumnRemoveButton.Width = 30;
+            // 
             // AbilityEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 256);
+            this.ClientSize = new System.Drawing.Size(398, 284);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.groupBoxType);
             this.Controls.Add(this.numericUpDownSP);
-            this.Controls.Add(this.numericUpDownCrit);
-            this.Controls.Add(this.numericUpDownAccuracy);
-            this.Controls.Add(this.numericUpDownPower);
             this.Controls.Add(this.labelSpCost);
-            this.Controls.Add(this.labelCrit);
-            this.Controls.Add(this.labelAccuracy);
-            this.Controls.Add(this.labelPower);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.textBoxName);
             this.Name = "AbilityEditor";
             this.Text = "Ability editor";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccuracy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCrit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSP)).EndInit();
-            this.groupBoxType.ResumeLayout(false);
-            this.groupBoxType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,18 +690,16 @@
 
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label labelPower;
-        private System.Windows.Forms.NumericUpDown numericUpDownPower;
-        private System.Windows.Forms.Label labelAccuracy;
-        private System.Windows.Forms.NumericUpDown numericUpDownAccuracy;
-        private System.Windows.Forms.Label labelCrit;
-        private System.Windows.Forms.NumericUpDown numericUpDownCrit;
         private System.Windows.Forms.Label labelSpCost;
         private System.Windows.Forms.NumericUpDown numericUpDownSP;
-        private System.Windows.Forms.GroupBox groupBoxType;
-        private System.Windows.Forms.RadioButton radioButtonM;
-        private System.Windows.Forms.RadioButton radioButtonP;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEffect;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnPower;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnAccuracy;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColumnCritical;
+        private System.Windows.Forms.DataGridViewButtonColumn ColumnAddButton;
+        private System.Windows.Forms.DataGridViewButtonColumn ColumnRemoveButton;
     }
 }

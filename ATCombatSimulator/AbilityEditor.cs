@@ -30,22 +30,17 @@ namespace ATCombatSimulator
         public void initialize()
         {
             textBoxName.Text = ability.Name;
-            numericUpDownAccuracy.Value = ability.Accuracy;
-            numericUpDownCrit.Value = ability.Crit;
-            numericUpDownPower.Value = ability.Power;
             numericUpDownSP.Value = ability.SpCost;
-            radioButtonP.Checked = ability.Physical;
-            radioButtonM.Checked = !ability.Physical;
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
             ability.Name = textBoxName.Text;
-            ability.Accuracy = (Int32)numericUpDownAccuracy.Value;
+            /*ability.Accuracy = (Int32)numericUpDownAccuracy.Value;
             ability.Crit = (Int32)numericUpDownCrit.Value;
             ability.Power = (Int32)numericUpDownPower.Value;
             ability.SpCost = (Int32)numericUpDownSP.Value;
-            ability.Physical = radioButtonP.Checked;
+            ability.Physical = radioButtonP.Checked;*/
 
             this.DialogResult = DialogResult.OK;
             this.Close();

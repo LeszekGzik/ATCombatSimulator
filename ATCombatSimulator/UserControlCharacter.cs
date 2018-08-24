@@ -40,12 +40,8 @@ namespace ATCombatSimulator
             foreach(Ability a in character.abilities)
             {
                 String newItem = a.Name + " (";
-                if (a.Physical == true) newItem += "Phy. POW ";
-                else newItem += "Mag. POW ";
-                newItem += a.Power;
-                newItem += ", SP ";
                 newItem += a.SpCost;
-                newItem += ")";
+                newItem += " SP)";
 
                 comboBoxAbilities.Items.Add(newItem);
             }
@@ -58,9 +54,7 @@ namespace ATCombatSimulator
         {
             labelHP.Text = "HP: " + character.currentHP + "/" + character.maxHP;
             labelSP.Text = "SP: " + character.currentSP + "/" + character.maxSP;
-            labelHit.Text = "Hit chance: " + (character.selectedAbility.Accuracy + 2 * character.AGI) + "%";
             labelDodge.Text = "Dodge chance: " + 2 * character.AGI + "%";
-            labelCrit.Text = "Critical hit chance: " + (character.selectedAbility.Crit + character.LCK) + "%";
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
@@ -72,8 +66,6 @@ namespace ATCombatSimulator
         private void comboBoxAbilities_SelectedIndexChanged(object sender, EventArgs e)
         {
             character.selectedAbility = character.abilities[comboBoxAbilities.SelectedIndex];
-            labelHit.Text = "Hit chance: " + (character.selectedAbility.Accuracy + 2 * character.AGI) + "%";
-            labelCrit.Text = "Critical hit chance: " + (character.selectedAbility.Crit + character.LCK) + "%";
         }
 
         private void numericUpDownLevel_ValueChanged(object sender, EventArgs e)
@@ -140,13 +132,9 @@ namespace ATCombatSimulator
             {
                 character.abilities.Add(ae.ability);
                 String newItem = ae.ability.Name + " (";
-                if (ae.ability.Physical == true) newItem += "Phy. POW ";
-                else newItem += "Mag. POW ";
-                newItem += ae.ability.Power;
-                newItem += ", SP ";
                 newItem += ae.ability.SpCost;
-                newItem += ")";
-
+                newItem += " SP)";
+            
                 comboBoxAbilities.Items.Add(newItem);
                 comboBoxAbilities.SelectedIndex = comboBoxAbilities.Items.Count - 1;
                 refresh();
@@ -163,12 +151,8 @@ namespace ATCombatSimulator
                 character.abilities.Add(ae.ability);
                 comboBoxAbilities.Items.RemoveAt(index);
                 String newItem = ae.ability.Name + " (";
-                if (ae.ability.Physical == true) newItem += "Phy. POW ";
-                else newItem += "Mag. POW ";
-                newItem += ae.ability.Power;
-                newItem += ", SP ";
                 newItem += ae.ability.SpCost;
-                newItem += ")";
+                newItem += " SP)";
 
                 comboBoxAbilities.Items.Add(newItem);
                 comboBoxAbilities.SelectedIndex = comboBoxAbilities.Items.Count - 1;

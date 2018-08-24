@@ -8,31 +8,31 @@ namespace ATCombatSimulator
 {
     public class Ability
     {
-        int power;
         String name;
         int spCost;
-        int accuracy;
-        int crit;
-        Boolean physical;
+        List<Effect> effects;
 
-
-        public int Power { get => power; set => power = value; }
         public int SpCost { get => spCost; set => spCost = value; }
-        public int Accuracy { get => accuracy; set => accuracy = value; }
-        public bool Physical { get => physical; set => physical = value; }
         public string Name { get => name; set => name = value; }
-        public int Crit { get => crit; set => crit = value; }
 
         public Ability() { }
 
-        public Ability(String _name, bool _physical, int _power, int _spcost, int _accuracy, int _crit)
+        public Ability(String _name, int _spcost)
         {
             Name = _name;
-            Physical = _physical;
-            Power = _power;
             SpCost = _spcost;
-            Accuracy = _accuracy;
-            Crit = _crit;
+            effects = new List<Effect>();
+        }
+
+        public String execute(Character user, Character target)
+        {
+            user.currentSP -= SpCost;
+            String result = "";
+            foreach(Effect e in effects)
+            {
+                result += e.execute(user, target);
+            }
+            return result;
         }
     }
 }

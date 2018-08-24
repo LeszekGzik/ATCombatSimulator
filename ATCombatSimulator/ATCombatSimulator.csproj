@@ -53,6 +53,12 @@
       <DependentUpon>AbilityEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Character.cs" />
+    <Compile Include="Effects\Effect.cs" />
+    <Compile Include="Effects\Heal.cs" />
+    <Compile Include="Effects\MagicalDamage.cs" />
+    <Compile Include="Effects\PhysicalDamage.cs" />
+    <Compile Include="Effects\SPDrain.cs" />
+    <Compile Include="Effects\SPRecovery.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

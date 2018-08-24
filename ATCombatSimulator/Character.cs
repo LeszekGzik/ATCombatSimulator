@@ -201,11 +201,11 @@ namespace ATCombatSimulator
                 //obliczenie obrażeń
                 if (selectedAbility.Physical)
                 {
-                    damage = (double)(selectedAbility.Power * ATK * (10 + level)) / (DEF * 10);
+                    damage = (double)(selectedAbility.Power * ATK * (10 + level)) / (target.DEF * 10);
                 }
                 else
                 {
-                    damage = (double)(selectedAbility.Power * MATK * (10 + level)) / (MDEF * 10);
+                    damage = (double)(selectedAbility.Power * MATK * (10 + level)) / (target.MDEF * 10);
                 }
                 damage *= (random.Next(90, 111) / 100.0);
                 //sprawdzenie krytyka

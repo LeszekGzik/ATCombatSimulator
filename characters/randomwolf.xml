@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <character name="Randomwolf">
   <stats>
-    <stat key="level" value="1" />
+    <stat key="level" value="20" />
     <stat key="ATK" value="6" />
     <stat key="DEF" value="8" />
     <stat key="VIT" value="6" />
@@ -14,6 +14,9 @@
   <abilities>
     <ability name="Claw" sp="0">
       <effect type="pdmg" pow="4" acc="90" crit="4" />
+    </ability>
+    <ability name="Bloodfang" sp="1">
+      <effect type="pdmg" pow="6" acc="70" crit="14" />
     </ability>
   </abilities>
 </character>

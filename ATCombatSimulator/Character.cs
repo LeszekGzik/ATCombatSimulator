@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATCombatSimulator.Effects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -87,11 +88,34 @@ namespace ATCombatSimulator
             {
                 Ability a = new Ability();
                 a.Name = abilityNode.Attributes["name"].Value;
-                /*a.Power = Int32.Parse(abilityNode.Attributes["pow"].Value);
-                a.Crit = Int32.Parse(abilityNode.Attributes["crit"].Value);
-                a.Accuracy = Int32.Parse(abilityNode.Attributes["acc"].Value);
                 a.SpCost = Int32.Parse(abilityNode.Attributes["sp"].Value);
-                a.Physical = (abilityNode.Attributes["type"].Value == "P");*/
+                foreach (XmlNode effectNode in doc.SelectNodes("//ability[@name='" + a.Name + "']/effect"))
+                {
+                    Effect e = null;
+                    String _type = effectNode.Attributes["type"].Value;
+                    int _pow = Int32.Parse(effectNode.Attributes["pow"].Value);
+                    int _acc = Int32.Parse(effectNode.Attributes["acc"].Value);
+                    int _crit = Int32.Parse(effectNode.Attributes["crit"].Value);
+                    switch (_type)
+                    {
+                        case "pdmg":
+                            e = new PhysicalDamage(_pow, _acc, _crit);
+                            break;
+                        case "mdmg":
+                            e = new MagicalDamage(_pow, _acc, _crit);
+                            break;
+                        case "heal":
+                            e = new Heal(_pow, _acc, _crit);
+                            break;
+                        case "spd":
+                            e = new SPDrain(_pow, _acc, _crit);
+                            break;
+                        case "spr":
+                            e = new SPRecovery(_pow, _acc, _crit);
+                            break;
+                    }
+                    a.Effects.Add(e);
+                }
                 abilities.Add(a);
             }
             reset();
@@ -163,12 +187,10 @@ namespace ATCombatSimulator
             {
                 XmlElement abilityNode = doc.CreateElement("ability");
                 abilityNode.SetAttribute("name", a.Name);
-                /*if (a.Physical) abilityNode.SetAttribute("type", "P");
-                else abilityNode.SetAttribute("type", "M");
-                abilityNode.SetAttribute("pow", a.Power.ToString());
-                abilityNode.SetAttribute("acc", a.Accuracy.ToString());
-                abilityNode.SetAttribute("crit", a.Crit.ToString());*/
                 abilityNode.SetAttribute("sp", a.SpCost.ToString());
+                XmlDocumentFragment effectNode = doc.CreateDocumentFragment();
+                effectNode.InnerXml = a.getEffectsAsXML();
+                abilityNode.AppendChild(effectNode);
                 abilitiesNode.AppendChild(abilityNode);
             }
             doc.Save(fileName);

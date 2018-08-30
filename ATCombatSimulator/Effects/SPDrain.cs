@@ -21,10 +21,23 @@ namespace ATCombatSimulator.Effects
             this.Type = "spd";
         }
 
+        public SPDrain(int _pow, int _acc, int _crit)
+        {
+            Type = "spd";
+            Power = _pow;
+            Accuracy = _acc;
+            Crit = _crit;
+        }
+
+        public override String toXMLNode()
+        {
+            String node = "<effect type=\"" + Type + "\" pow=\"" + Power + "\" acc=\"" + Accuracy + "\" crit=\"" + Crit + "\" />";
+            return node;
+        }
+
         public override String execute(Character user, Character target)
         {
             String result = "";
-            Random random = new Random();
             double damage = Power * (10 + user.level) / 10;
             int hitPercent = Accuracy + 2 * user.AGI - 2 * target.AGI;
             int critPercent = Crit + user.LCK - target.LCK;

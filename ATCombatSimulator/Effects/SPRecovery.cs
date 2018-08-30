@@ -21,10 +21,23 @@ namespace ATCombatSimulator.Effects
             this.Type = "spr";
         }
 
+        public SPRecovery(int _pow, int _acc, int _crit)
+        {
+            Type = "spr";
+            Power = _pow;
+            Accuracy = _acc;
+            Crit = _crit;
+        }
+
+        public override String toXMLNode()
+        {
+            String node = "<effect type=\"" + Type + "\" pow=\"" + Power + "\" acc=\"" + Accuracy + "\" crit=\"" + Crit + "\" />";
+            return node;
+        }
+
         public override String execute(Character user, Character target)
         {
             String result = "";
-            Random random = new Random();
             double healing = Power * (10 + user.level) / 10;
 
             //sprawdzenie trafienia

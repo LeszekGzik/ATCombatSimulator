@@ -13,5 +13,9 @@ namespace ATCombatSimulator
         public string Type { get => type; set => type = value; }
 
         public abstract String execute(Character user, Character target);
+
+        public abstract String toXMLNode();
+
+        public static Random random = new Random();
     }
 }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<character name="Max">
+  <stats>
+    <stat key="level" value="10" />
+    <stat key="ATK" value="8" />
+    <stat key="DEF" value="9" />
+    <stat key="VIT" value="10" />
+    <stat key="SKL" value="16" />
+    <stat key="MATK" value="18" />
+    <stat key="MDEF" value="16" />
+    <stat key="AGI" value="13" />
+    <stat key="LCK" value="10" />
+  </stats>
+  <abilities>
+    <ability name="Dagger" sp="0">
+      <effect type="pdmg" pow="5" acc="80" crit="4" />
+    </ability>
+    <ability name="Firebolt" sp="3">
+      <effect type="mdmg" pow="5" acc="90" crit="6" />
+    </ability>
+    <ability name="Life drain" sp="5">
+      <effect type="mdmg" pow="3" acc="100" crit="1" />
+      <effect type="heal" pow="6" acc="100" crit="1" />
+    </ability>
+  </abilities>
+</character>

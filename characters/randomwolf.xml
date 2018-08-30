@@ -12,7 +12,8 @@
     <stat key="LCK" value="10" />
   </stats>
   <abilities>
-    <ability name="Claw" type="P" pow="4" acc="90" crit="4" sp="0" />
-    <ability name="Blood fang" type="P" pow="6" acc="70" crit="14" sp="1" />
+    <ability name="Claw" sp="0">
+      <effect type="pdmg" pow="4" acc="90" crit="4" />
+    </ability>
   </abilities>
 </character>

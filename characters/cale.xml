@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<character name="Cale">
+<character name="Callie">
   <stats>
     <stat key="level" value="1" />
     <stat key="ATK" value="17" />
@@ -12,8 +12,13 @@
     <stat key="LCK" value="16" />
   </stats>
   <abilities>
-    <ability name="Arrow" type="P" pow="5" acc="90" crit="6" sp="0" />
-    <ability name="Poison arrow" type="P" pow="4" acc="90" crit="20" sp="1" />
-    <ability name="Thunderbolt" type="M" pow="10" acc="65" crit="6" sp="4" />
+    <ability name="Arrow" sp="0">
+      <effect type="pdmg" pow="5" acc="90" crit="6" />
+    </ability>
+    <ability name="Arrow barrage" sp="4">
+      <effect type="pdmg" pow="3" acc="70" crit="2" />
+      <effect type="pdmg" pow="3" acc="70" crit="2" />
+      <effect type="pdmg" pow="3" acc="70" crit="2" />
+    </ability>
   </abilities>
 </character>

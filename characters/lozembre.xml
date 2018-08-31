@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<character name="Doctor Lozember">
+  <stats>
+    <stat key="level" value="10" />
+    <stat key="ATK" value="20" />
+    <stat key="DEF" value="18" />
+    <stat key="VIT" value="30" />
+    <stat key="SKL" value="15" />
+    <stat key="MATK" value="8" />
+    <stat key="MDEF" value="12" />
+    <stat key="AGI" value="8" />
+    <stat key="LCK" value="10" />
+  </stats>
+  <abilities>
+    <ability name="Laser needle" sp="1">
+      <effect type="mdmg" pow="3" acc="105" crit="10" />
+    </ability>
+    <ability name="Mechafist" sp="0">
+      <effect type="pdmg" pow="3" acc="85" crit="0" />
+    </ability>
+    <ability name="Missiles" sp="3">
+      <effect type="mdmg" pow="4" acc="65" crit="5" />
+      <effect type="mdmg" pow="4" acc="65" crit="5" />
+      <effect type="mdmg" pow="4" acc="65" crit="5" />
+    </ability>
+  </abilities>
+</character>

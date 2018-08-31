@@ -57,7 +57,7 @@ namespace ATCombatSimulator.Effects
                 {
                     user.currentSP = user.maxSP;
                 }
-                int healingDone = user.currentHP - oldSP;
+                int healingDone = user.currentSP - oldSP;
                 result += user.name + " recovered " + healingDone + " SP.\n";
             }
             else

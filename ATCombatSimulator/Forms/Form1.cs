@@ -113,20 +113,45 @@ namespace ATCombatSimulator
                 richTextBoxResults.Text += c1.attack(c2);
                 userControlCharacter1.refresh();
                 userControlCharacter2.refresh();
-                if (c2.isDead())
+                buttonAttack1.Enabled = false;
+                if (!deathCheck(c1, c2))
                 {
-                    richTextBoxResults.Text += c2.name + " is knocked out. " + c1.name + " wins!\n";
-                    buttonAttack1.Enabled = false;
-                }
-                else
-                {
-                    buttonAttack1.Enabled = false;
                     buttonAttack2.Enabled = true;
                 }
             }
             else
             {
                 richTextBoxResults.Text += c1.name + " doesn't have enough SP to use " + c1.selectedAbility.Name + ".\n";
+            }
+        }
+
+        //zwraca true jeśli co najmniej jedna postać umarła
+        private bool deathCheck(Character c1, Character c2)
+        {
+            if (c1.isDead())
+            {
+                richTextBoxResults.Text += c1.name + " is knocked out.\n";
+                if (c2.isDead())
+                {
+                    richTextBoxResults.Text += c2.name + " is knocked out. \nThe battle is a draw.";
+                }
+                else
+                {
+                    richTextBoxResults.Text += c2.name + " wins!";
+                }
+                return true;
+            }
+            else
+            {
+                if (c2.isDead())
+                {
+                    richTextBoxResults.Text += c2.name + " is knocked out. \n" + c1.name + " wins!";
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
@@ -139,14 +164,9 @@ namespace ATCombatSimulator
                 richTextBoxResults.Text += c2.attack(c1);
                 userControlCharacter1.refresh();
                 userControlCharacter2.refresh();
-                if (c1.isDead())
+                buttonAttack2.Enabled = false;
+                if (!deathCheck(c1, c2))
                 {
-                    richTextBoxResults.Text += c1.name + " is knocked out. " + c2.name + " wins!\n";
-                    buttonAttack2.Enabled = false;
-                }
-                else
-                {
-                    buttonAttack2.Enabled = false;
                     buttonAttack1.Enabled = true;
                 }
             }
@@ -154,6 +174,12 @@ namespace ATCombatSimulator
             {
                 richTextBoxResults.Text += c2.name + " doesn't have enough SP to use " + c2.selectedAbility.Name + ".\n";
             }
+        }
+
+        private void richTextBoxResults_TextChanged(object sender, EventArgs e)
+        {
+            richTextBoxResults.SelectionStart = richTextBoxResults.Text.Length;
+            richTextBoxResults.ScrollToCaret();
         }
     }
 }

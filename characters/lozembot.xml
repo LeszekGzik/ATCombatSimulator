@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<character name="Lozembot">
+  <stats>
+    <stat key="level" value="1" />
+    <stat key="ATK" value="8" />
+    <stat key="DEF" value="12" />
+    <stat key="VIT" value="10" />
+    <stat key="SKL" value="5" />
+    <stat key="MATK" value="5" />
+    <stat key="MDEF" value="8" />
+    <stat key="AGI" value="5" />
+    <stat key="LCK" value="10" />
+  </stats>
+  <abilities>
+    <ability name="Mechafist" sp="0">
+      <effect type="pdmg" pow="3" acc="85" crit="4" />
+    </ability>
+    <ability name="Self-destruct" sp="2">
+      <effect type="pdmg" pow="10" acc="75" crit="10" />
+      <effect type="heal" pow="-50" acc="200" crit="0" />
+    </ability>
+  </abilities>
+</character>

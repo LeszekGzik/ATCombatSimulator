@@ -59,7 +59,7 @@ namespace ATCombatSimulator.Effects
                 {
                     target.currentSP = 0;
                 }
-                int drainDone = target.currentSP - oldSP;
+                int drainDone = oldSP - target.currentSP;
                 result += target.name + " lost " + drainDone + " SP.\n";
             }
             else

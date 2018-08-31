@@ -74,6 +74,7 @@
             this.richTextBoxResults.Size = new System.Drawing.Size(280, 372);
             this.richTextBoxResults.TabIndex = 3;
             this.richTextBoxResults.Text = "";
+            this.richTextBoxResults.TextChanged += new System.EventHandler(this.richTextBoxResults_TextChanged);
             // 
             // buttonReset
             // 

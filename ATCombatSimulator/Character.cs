@@ -28,6 +28,8 @@ namespace ATCombatSimulator
         public int AGI = 1;
         public int LCK = 1;
 
+        public bool poisoned;
+
         public Character()
         {
             abilities = new List<Ability>();
@@ -42,6 +44,7 @@ namespace ATCombatSimulator
             maxSP = (10 + level) * SKL / 20;
             currentHP = maxHP;
             currentSP = maxSP;
+            poisoned = false;
         }
 
         public void loadFromXML(String fileName)
@@ -87,15 +90,24 @@ namespace ATCombatSimulator
             foreach (XmlNode abilityNode in doc.SelectNodes("//ability"))
             {
                 Ability a = new Ability();
+                int _pow, _acc, _crit;
                 a.Name = abilityNode.Attributes["name"].Value;
                 a.SpCost = Int32.Parse(abilityNode.Attributes["sp"].Value);
                 foreach (XmlNode effectNode in doc.SelectNodes("//ability[@name='" + a.Name + "']/effect"))
                 {
                     Effect e = null;
                     String _type = effectNode.Attributes["type"].Value;
-                    int _pow = Int32.Parse(effectNode.Attributes["pow"].Value);
-                    int _acc = Int32.Parse(effectNode.Attributes["acc"].Value);
-                    int _crit = Int32.Parse(effectNode.Attributes["crit"].Value);
+                    try {
+                        _pow = Int32.Parse(effectNode.Attributes["pow"].Value);
+                    } catch(NullReferenceException) { _pow = 0; }
+                    try
+                    {
+                        _acc = Int32.Parse(effectNode.Attributes["acc"].Value);
+                    } catch (NullReferenceException) { _acc = 0; }
+                    try
+                    {
+                        _crit = Int32.Parse(effectNode.Attributes["crit"].Value);
+                    } catch (NullReferenceException) { _crit = 0; }
                     switch (_type)
                     {
                         case "pdmg":
@@ -112,6 +124,12 @@ namespace ATCombatSimulator
                             break;
                         case "spr":
                             e = new SPRecovery(_pow, _acc, _crit);
+                            break;
+                        case "psn":
+                            e = new PoisonEnemy(_acc);
+                            break;
+                        case "psnself":
+                            e = new PoisonSelf(_acc);
                             break;
                     }
                     a.Effects.Add(e);
@@ -209,6 +227,22 @@ namespace ATCombatSimulator
         internal String attack(Character target)
         {
             return selectedAbility.execute(this, target);
+        }
+
+        internal String processBuffs()
+        {
+            String result = "";
+            if (poisoned)
+            {
+                int poisonDmg = maxHP / 10;
+                if (poisonDmg == 0)
+                {
+                    poisonDmg = 1;
+                }
+                currentHP -= poisonDmg;
+                result += (name + " took " + poisonDmg + " damage from poison.\n");
+            }
+            return result;
         }
     }
 }

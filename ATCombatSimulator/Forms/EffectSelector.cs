@@ -41,6 +41,14 @@ namespace ATCombatSimulator.Forms
             {
                 effectType = "spr";
             }
+            else if (radioButtonPsn.Checked)
+            {
+                effectType = "psn";
+            }
+            else if (radioButtonPsnself.Checked)
+            {
+                effectType = "psnself";
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();

@@ -111,6 +111,7 @@ namespace ATCombatSimulator
             if (c1.hasEnoughSP())
             {
                 richTextBoxResults.Text += c1.attack(c2);
+                richTextBoxResults.Text += c1.processBuffs();
                 userControlCharacter1.refresh();
                 userControlCharacter2.refresh();
                 buttonAttack1.Enabled = false;
@@ -155,6 +156,7 @@ namespace ATCombatSimulator
             }
         }
 
+
         private void buttonAttack2_Click(object sender, EventArgs e)
         {
             Character c1 = userControlCharacter1.character;
@@ -162,6 +164,7 @@ namespace ATCombatSimulator
             if (c2.hasEnoughSP())
             {
                 richTextBoxResults.Text += c2.attack(c1);
+                richTextBoxResults.Text += c2.processBuffs();
                 userControlCharacter1.refresh();
                 userControlCharacter2.refresh();
                 buttonAttack2.Enabled = false;

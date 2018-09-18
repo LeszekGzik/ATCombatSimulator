@@ -57,6 +57,7 @@
             this.numericUpDownLevel = new System.Windows.Forms.NumericUpDown();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
+            this.labelPsn = new System.Windows.Forms.Label();
             this.groupBoxCharacter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgi)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             // groupBoxCharacter
             // 
+            this.groupBoxCharacter.Controls.Add(this.labelPsn);
             this.groupBoxCharacter.Controls.Add(this.buttonDelete);
             this.groupBoxCharacter.Controls.Add(this.buttonEdit);
             this.groupBoxCharacter.Controls.Add(this.buttonAddAbility);
@@ -441,6 +443,17 @@
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
+            // labelPsn
+            // 
+            this.labelPsn.AutoSize = true;
+            this.labelPsn.ForeColor = System.Drawing.Color.SeaGreen;
+            this.labelPsn.Location = new System.Drawing.Point(162, 179);
+            this.labelPsn.Name = "labelPsn";
+            this.labelPsn.Size = new System.Drawing.Size(63, 13);
+            this.labelPsn.TabIndex = 8;
+            this.labelPsn.Text = "POISONED";
+            this.labelPsn.Visible = false;
+            // 
             // UserControlCharacter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,5 +507,6 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAddAbility;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Label labelPsn;
     }
 }

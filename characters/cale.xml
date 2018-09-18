@@ -20,5 +20,9 @@
       <effect type="pdmg" pow="3" acc="70" crit="2" />
       <effect type="pdmg" pow="3" acc="70" crit="2" />
     </ability>
+    <ability name="Poison arrow" sp="2">
+      <effect type="pdmg" pow="2" acc="90" crit="0" />
+      <effect type="psn" acc="50" />
+    </ability>
   </abilities>
 </character>

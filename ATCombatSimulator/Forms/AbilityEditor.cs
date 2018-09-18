@@ -98,6 +98,12 @@ namespace ATCombatSimulator
                     case "spr":
                         e = new SPRecovery(_pow, _acc, _crit);
                         break;
+                    case "psn":
+                        e = new PoisonEnemy(_acc);
+                        break;
+                    case "psnself":
+                        e = new PoisonSelf(_acc);
+                        break;
                 }
                 ability.Effects.Add(e);
             }
@@ -118,6 +124,10 @@ namespace ATCombatSimulator
             {
                 dataGridView1.Rows.Add();
                 dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = es.effectType;
+                if(es.effectType=="psn"||es.effectType=="psnself")
+                {
+                    
+                }
             }
         }
 

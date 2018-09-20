@@ -131,6 +131,9 @@ namespace ATCombatSimulator
                         case "psnself":
                             e = new PoisonSelf(_acc);
                             break;
+                        case "cleanse":
+                            e = new Cleanse();
+                            break;
                     }
                     a.Effects.Add(e);
                 }

@@ -18,8 +18,9 @@
     <ability name="Laser shot" sp="2">
       <effect type="mdmg" pow="5" acc="120" crit="10" />
     </ability>
-    <ability name="Medkit" sp="3">
+    <ability name="Medkit" sp="4">
       <effect type="heal" pow="5" acc="200" crit="10" />
+      <effect type="cleanse" />
     </ability>
   </abilities>
 </character>

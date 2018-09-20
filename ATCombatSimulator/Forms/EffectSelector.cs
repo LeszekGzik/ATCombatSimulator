@@ -49,6 +49,10 @@ namespace ATCombatSimulator.Forms
             {
                 effectType = "psnself";
             }
+            else if (radioButtonCleanse.Checked)
+            {
+                effectType = "cleanse";
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();

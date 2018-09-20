@@ -15,14 +15,14 @@
     <ability name="Arrow" sp="0">
       <effect type="pdmg" pow="5" acc="90" crit="6" />
     </ability>
+    <ability name="Poison arrow" sp="2">
+      <effect type="pdmg" pow="3" acc="90" crit="0" />
+      <effect type="psn" acc="50" />
+    </ability>
     <ability name="Arrow barrage" sp="4">
       <effect type="pdmg" pow="3" acc="70" crit="2" />
       <effect type="pdmg" pow="3" acc="70" crit="2" />
       <effect type="pdmg" pow="3" acc="70" crit="2" />
-    </ability>
-    <ability name="Poison arrow" sp="2">
-      <effect type="pdmg" pow="2" acc="90" crit="0" />
-      <effect type="psn" acc="50" />
     </ability>
   </abilities>
 </character>

@@ -37,6 +37,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.radioButtonPsn = new System.Windows.Forms.RadioButton();
             this.radioButtonPsnself = new System.Windows.Forms.RadioButton();
+            this.radioButtonCleanse = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // radioButtonPdmg
@@ -93,7 +94,7 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(13, 192);
+            this.buttonOK.Location = new System.Drawing.Point(14, 211);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 1;
@@ -103,7 +104,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(147, 192);
+            this.buttonCancel.Location = new System.Drawing.Point(147, 211);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 1;
@@ -131,11 +132,22 @@
             this.radioButtonPsnself.Text = "Poison self";
             this.radioButtonPsnself.UseVisualStyleBackColor = true;
             // 
+            // radioButtonCleanse
+            // 
+            this.radioButtonCleanse.AutoSize = true;
+            this.radioButtonCleanse.Location = new System.Drawing.Point(13, 174);
+            this.radioButtonCleanse.Name = "radioButtonCleanse";
+            this.radioButtonCleanse.Size = new System.Drawing.Size(145, 17);
+            this.radioButtonCleanse.TabIndex = 2;
+            this.radioButtonCleanse.Text = "Remove debuffs from self";
+            this.radioButtonCleanse.UseVisualStyleBackColor = true;
+            // 
             // EffectSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 236);
+            this.ClientSize = new System.Drawing.Size(234, 248);
+            this.Controls.Add(this.radioButtonCleanse);
             this.Controls.Add(this.radioButtonPsnself);
             this.Controls.Add(this.radioButtonPsn);
             this.Controls.Add(this.buttonCancel);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.RadioButton radioButtonPsn;
         private System.Windows.Forms.RadioButton radioButtonPsnself;
+        private System.Windows.Forms.RadioButton radioButtonCleanse;
     }
 }

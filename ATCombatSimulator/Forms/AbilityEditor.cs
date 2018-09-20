@@ -65,6 +65,21 @@ namespace ATCombatSimulator
                         row.Cells[2].Value = ((SPRecovery)e).Accuracy.ToString();
                         row.Cells[3].Value = ((SPRecovery)e).Crit.ToString();
                         break;
+                    case "psn":
+                        disableCell(row, 1);
+                        row.Cells[2].Value = ((PoisonEnemy)e).Accuracy.ToString();
+                        disableCell(row, 3);
+                        break;
+                    case "psnself":
+                        disableCell(row, 1);
+                        row.Cells[2].Value = ((PoisonSelf)e).Accuracy.ToString();
+                        disableCell(row, 3);
+                        break;
+                    case "cleanse":
+                        disableCell(row, 1);
+                        disableCell(row, 2);
+                        disableCell(row, 3);
+                        break;
                 }
             }
         }
@@ -104,6 +119,10 @@ namespace ATCombatSimulator
                     case "psnself":
                         e = new PoisonSelf(_acc);
                         break;
+                    case "cleanse":
+                        e = new Cleanse();
+                        break;
+
                 }
                 ability.Effects.Add(e);
             }
@@ -123,10 +142,18 @@ namespace ATCombatSimulator
             if (es.ShowDialog() == DialogResult.OK)
             {
                 dataGridView1.Rows.Add();
-                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = es.effectType;
+                int rowNum = dataGridView1.RowCount - 1;
+                dataGridView1.Rows[rowNum].Cells[0].Value = es.effectType;
                 if(es.effectType=="psn"||es.effectType=="psnself")
                 {
-                    
+                    disableCell(rowNum, 1);
+                    disableCell(rowNum, 3);
+                }
+                else if (es.effectType == "cleanse")
+                {
+                    disableCell(rowNum, 1);
+                    disableCell(rowNum, 2);
+                    disableCell(rowNum, 3);
                 }
             }
         }
@@ -157,6 +184,24 @@ namespace ATCombatSimulator
                 default:
                     break;
             }
+        }
+
+        private void disableCell(int row, int col)
+        {
+            DataGridViewCell cell = dataGridView1.Rows[row].Cells[col];
+            cell.Value = 0;
+            cell.ReadOnly = true;
+            cell.Style.BackColor = Color.LightGray;
+            cell.Style.ForeColor = Color.DarkGray;
+        }
+
+        private void disableCell(DataGridViewRow row, int col)
+        {
+            DataGridViewCell cell = row.Cells[col];
+            cell.Value = 0;
+            cell.ReadOnly = true;
+            cell.Style.BackColor = Color.LightGray;
+            cell.Style.ForeColor = Color.DarkGray;
         }
     }
 }

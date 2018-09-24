@@ -32,9 +32,8 @@ namespace ATCombatSimulator.Effects
         public override String execute(Character user, Character target)
         {
             String result = "";
-            int hitPercent = Accuracy + 2 * user.AGI - 2 * target.AGI;
             //sprawdzenie trafienia
-            if (random.Next(0, 100) < hitPercent)
+            if (random.Next(0, 100) < Accuracy)
             {
                 target.poisoned = true;
                 result += target.name + " is now poisoned.\n";

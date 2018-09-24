@@ -39,8 +39,6 @@ namespace ATCombatSimulator.Effects
         {
             String result = "";
             double damage = Power * (10 + user.level) / 10;
-            int hitPercent = Accuracy + 2 * user.AGI - 2 * target.AGI;
-            int critPercent = Crit + user.LCK - target.LCK;
 
             //sprawdzenie trafienia
             if (random.Next(0, 100) < Accuracy)

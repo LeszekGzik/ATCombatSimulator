@@ -110,11 +110,15 @@ namespace ATCombatSimulator
             Character c2 = userControlCharacter2.character;
             if (c1.hasEnoughSP())
             {
-                richTextBoxResults.Text += c1.attack(c2);
                 richTextBoxResults.Text += c1.processBuffs();
+                if (!c1.cantmove)
+                {
+                    richTextBoxResults.Text += c1.attack(c2);
+                }
                 userControlCharacter1.refresh();
                 userControlCharacter2.refresh();
                 buttonAttack1.Enabled = false;
+                c1.cantmove = false;
                 if (!deathCheck(c1, c2))
                 {
                     buttonAttack2.Enabled = true;
@@ -163,11 +167,15 @@ namespace ATCombatSimulator
             Character c2 = userControlCharacter2.character;
             if (c2.hasEnoughSP())
             {
-                richTextBoxResults.Text += c2.attack(c1);
                 richTextBoxResults.Text += c2.processBuffs();
+                if (!c2.cantmove)
+                {
+                    richTextBoxResults.Text += c2.attack(c1);
+                }
                 userControlCharacter1.refresh();
                 userControlCharacter2.refresh();
                 buttonAttack2.Enabled = false;
+                c2.cantmove = false;
                 if (!deathCheck(c1, c2))
                 {
                     buttonAttack1.Enabled = true;

@@ -24,5 +24,9 @@
       <effect type="pdmg" pow="3" acc="70" crit="2" />
       <effect type="pdmg" pow="3" acc="70" crit="2" />
     </ability>
+    <ability name="Thunderbolt arrow" sp="2">
+      <effect type="mdmg" pow="3" acc="90" crit="0" />
+      <effect type="par" acc="30" />
+    </ability>
   </abilities>
 </character>

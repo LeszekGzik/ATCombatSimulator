@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace ATCombatSimulator.Effects
 {
-    class PoisonSelf : Effect
+    class ParalyzeSelf : Effect
     {
         int accuracy;
 
         public int Accuracy { get => accuracy; set => accuracy = value; }
 
-        public PoisonSelf()
+        public ParalyzeSelf()
         {
-            this.Type = "psnself";
+            this.Type = "parself";
         }
 
-        public PoisonSelf(int _acc)
+        public ParalyzeSelf(int _acc)
         {
-            this.Type = "psnself";
+            this.Type = "parself";
             this.Accuracy = _acc;
         }
 
@@ -35,8 +35,8 @@ namespace ATCombatSimulator.Effects
             //sprawdzenie trafienia
             if (random.Next(0, 100) < Accuracy)
             {
-                user.poisoned = true;
-                result += user.name + " is now poisoned.\n";
+                user.paralyzed = true;
+                result += user.name + " is now paralyzed.\n";
             }
             return result;
         }

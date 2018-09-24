@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxCharacter = new System.Windows.Forms.GroupBox();
+            this.labelPsn = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAddAbility = new System.Windows.Forms.Button();
@@ -57,7 +58,7 @@
             this.numericUpDownLevel = new System.Windows.Forms.NumericUpDown();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.labelPsn = new System.Windows.Forms.Label();
+            this.labelPar = new System.Windows.Forms.Label();
             this.groupBoxCharacter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgi)).BeginInit();
@@ -72,6 +73,7 @@
             // 
             // groupBoxCharacter
             // 
+            this.groupBoxCharacter.Controls.Add(this.labelPar);
             this.groupBoxCharacter.Controls.Add(this.labelPsn);
             this.groupBoxCharacter.Controls.Add(this.buttonDelete);
             this.groupBoxCharacter.Controls.Add(this.buttonEdit);
@@ -107,6 +109,17 @@
             this.groupBoxCharacter.TabIndex = 1;
             this.groupBoxCharacter.TabStop = false;
             this.groupBoxCharacter.Text = "Character";
+            // 
+            // labelPsn
+            // 
+            this.labelPsn.AutoSize = true;
+            this.labelPsn.ForeColor = System.Drawing.Color.SeaGreen;
+            this.labelPsn.Location = new System.Drawing.Point(162, 179);
+            this.labelPsn.Name = "labelPsn";
+            this.labelPsn.Size = new System.Drawing.Size(63, 13);
+            this.labelPsn.TabIndex = 8;
+            this.labelPsn.Text = "POISONED";
+            this.labelPsn.Visible = false;
             // 
             // buttonDelete
             // 
@@ -443,16 +456,16 @@
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
-            // labelPsn
+            // labelPar
             // 
-            this.labelPsn.AutoSize = true;
-            this.labelPsn.ForeColor = System.Drawing.Color.SeaGreen;
-            this.labelPsn.Location = new System.Drawing.Point(162, 179);
-            this.labelPsn.Name = "labelPsn";
-            this.labelPsn.Size = new System.Drawing.Size(63, 13);
-            this.labelPsn.TabIndex = 8;
-            this.labelPsn.Text = "POISONED";
-            this.labelPsn.Visible = false;
+            this.labelPar.AutoSize = true;
+            this.labelPar.ForeColor = System.Drawing.Color.Goldenrod;
+            this.labelPar.Location = new System.Drawing.Point(162, 199);
+            this.labelPar.Name = "labelPar";
+            this.labelPar.Size = new System.Drawing.Size(71, 13);
+            this.labelPar.TabIndex = 8;
+            this.labelPar.Text = "PARALYZED";
+            this.labelPar.Visible = false;
             // 
             // UserControlCharacter
             // 
@@ -508,5 +521,6 @@
         private System.Windows.Forms.Button buttonAddAbility;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label labelPsn;
+        private System.Windows.Forms.Label labelPar;
     }
 }

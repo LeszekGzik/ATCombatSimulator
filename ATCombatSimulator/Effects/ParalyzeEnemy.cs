@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace ATCombatSimulator.Effects
 {
-    class PoisonSelf : Effect
+    class ParalyzeEnemy : Effect
     {
         int accuracy;
 
         public int Accuracy { get => accuracy; set => accuracy = value; }
 
-        public PoisonSelf()
+        public ParalyzeEnemy()
         {
-            this.Type = "psnself";
+            this.Type = "par";
         }
 
-        public PoisonSelf(int _acc)
+        public ParalyzeEnemy(int _acc)
         {
-            this.Type = "psnself";
+            this.Type = "par";
             this.Accuracy = _acc;
         }
 
@@ -32,11 +32,12 @@ namespace ATCombatSimulator.Effects
         public override String execute(Character user, Character target)
         {
             String result = "";
+            int hitPercent = Accuracy + 2 * user.AGI - 2 * target.AGI;
             //sprawdzenie trafienia
-            if (random.Next(0, 100) < Accuracy)
+            if (random.Next(0, 100) < hitPercent)
             {
-                user.poisoned = true;
-                result += user.name + " is now poisoned.\n";
+                target.paralyzed = true;
+                result += target.name + " is now paralyzed.\n";
             }
             return result;
         }

@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Ability.cs" />
     <Compile Include="Effects\Cleanse.cs" />
+    <Compile Include="Effects\ParalyzeEnemy.cs" />
+    <Compile Include="Effects\ParalyzeSelf.cs" />
     <Compile Include="Effects\PoisonEnemy.cs" />
     <Compile Include="Effects\PoisonSelf.cs" />
     <Compile Include="Forms\AbilityEditor.cs">

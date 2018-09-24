@@ -38,6 +38,8 @@
             this.radioButtonPsn = new System.Windows.Forms.RadioButton();
             this.radioButtonPsnself = new System.Windows.Forms.RadioButton();
             this.radioButtonCleanse = new System.Windows.Forms.RadioButton();
+            this.radioButtonPar = new System.Windows.Forms.RadioButton();
+            this.radioButtonParself = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // radioButtonPdmg
@@ -94,7 +96,7 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(14, 211);
+            this.buttonOK.Location = new System.Drawing.Point(14, 254);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 1;
@@ -104,7 +106,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(147, 211);
+            this.buttonCancel.Location = new System.Drawing.Point(147, 254);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 1;
@@ -135,20 +137,42 @@
             // radioButtonCleanse
             // 
             this.radioButtonCleanse.AutoSize = true;
-            this.radioButtonCleanse.Location = new System.Drawing.Point(13, 174);
+            this.radioButtonCleanse.Location = new System.Drawing.Point(13, 220);
             this.radioButtonCleanse.Name = "radioButtonCleanse";
             this.radioButtonCleanse.Size = new System.Drawing.Size(145, 17);
             this.radioButtonCleanse.TabIndex = 2;
             this.radioButtonCleanse.Text = "Remove debuffs from self";
             this.radioButtonCleanse.UseVisualStyleBackColor = true;
             // 
+            // radioButtonPar
+            // 
+            this.radioButtonPar.AutoSize = true;
+            this.radioButtonPar.Location = new System.Drawing.Point(13, 174);
+            this.radioButtonPar.Name = "radioButtonPar";
+            this.radioButtonPar.Size = new System.Drawing.Size(99, 17);
+            this.radioButtonPar.TabIndex = 2;
+            this.radioButtonPar.Text = "Paralyze enemy";
+            this.radioButtonPar.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonParself
+            // 
+            this.radioButtonParself.AutoSize = true;
+            this.radioButtonParself.Location = new System.Drawing.Point(13, 197);
+            this.radioButtonParself.Name = "radioButtonParself";
+            this.radioButtonParself.Size = new System.Drawing.Size(84, 17);
+            this.radioButtonParself.TabIndex = 2;
+            this.radioButtonParself.Text = "Paralyze self";
+            this.radioButtonParself.UseVisualStyleBackColor = true;
+            // 
             // EffectSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 248);
+            this.ClientSize = new System.Drawing.Size(234, 289);
             this.Controls.Add(this.radioButtonCleanse);
+            this.Controls.Add(this.radioButtonParself);
             this.Controls.Add(this.radioButtonPsnself);
+            this.Controls.Add(this.radioButtonPar);
             this.Controls.Add(this.radioButtonPsn);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
@@ -176,5 +200,7 @@
         private System.Windows.Forms.RadioButton radioButtonPsn;
         private System.Windows.Forms.RadioButton radioButtonPsnself;
         private System.Windows.Forms.RadioButton radioButtonCleanse;
+        private System.Windows.Forms.RadioButton radioButtonPar;
+        private System.Windows.Forms.RadioButton radioButtonParself;
     }
 }

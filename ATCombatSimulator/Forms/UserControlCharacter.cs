@@ -56,6 +56,7 @@ namespace ATCombatSimulator
             labelSP.Text = "SP: " + character.currentSP + "/" + character.maxSP;
             labelDodge.Text = "Dodge chance: " + 2 * character.AGI + "%";
             labelPsn.Visible = character.poisoned;
+            labelPar.Visible = character.paralyzed;
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)

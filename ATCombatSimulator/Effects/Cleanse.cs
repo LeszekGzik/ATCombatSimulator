@@ -24,10 +24,13 @@ namespace ATCombatSimulator.Effects
             String result = "";
             if (user.poisoned)
             {
-                user.poisoned = false;
                 result += user.name + " is no longer poisoned.\n";
             }
-
+            if(user.paralyzed)
+            {
+                result += user.name + " is no longer paralyzed.\n";
+            }
+            user.clearBuffs();
             return result;
         }
     }

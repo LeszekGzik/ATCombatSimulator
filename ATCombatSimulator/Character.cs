@@ -29,6 +29,8 @@ namespace ATCombatSimulator
         public int LCK = 1;
 
         public bool poisoned;
+        public bool paralyzed;
+        public bool cantmove;
 
         public Character()
         {
@@ -44,7 +46,7 @@ namespace ATCombatSimulator
             maxSP = (10 + level) * SKL / 20;
             currentHP = maxHP;
             currentSP = maxSP;
-            poisoned = false;
+            clearBuffs();
         }
 
         public void loadFromXML(String fileName)
@@ -130,6 +132,12 @@ namespace ATCombatSimulator
                             break;
                         case "psnself":
                             e = new PoisonSelf(_acc);
+                            break;
+                        case "par":
+                            e = new ParalyzeEnemy(_acc);
+                            break;
+                        case "parself":
+                            e = new ParalyzeSelf(_acc);
                             break;
                         case "cleanse":
                             e = new Cleanse();
@@ -245,7 +253,21 @@ namespace ATCombatSimulator
                 currentHP -= poisonDmg;
                 result += (name + " took " + poisonDmg + " damage from poison.\n");
             }
+            if (paralyzed)
+            {
+                if (Effect.random.Next(0, 100) < 50)
+                {
+                    cantmove = true;
+                    result += (name + " can't move due to paralysis!\n");
+                }
+            }
             return result;
+        }
+
+        internal void clearBuffs()
+        {
+            poisoned = false;
+            paralyzed = false;
         }
     }
 }

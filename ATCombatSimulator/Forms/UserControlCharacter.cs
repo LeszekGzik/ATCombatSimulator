@@ -57,6 +57,7 @@ namespace ATCombatSimulator
             labelDodge.Text = "Dodge chance: " + 2 * character.AGI + "%";
             labelPsn.Visible = character.poisoned;
             labelPar.Visible = character.paralyzed;
+            labelBli.Visible = character.blinded;
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)

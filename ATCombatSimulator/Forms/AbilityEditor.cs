@@ -85,6 +85,16 @@ namespace ATCombatSimulator
                         row.Cells[2].Value = ((ParalyzeSelf)e).Accuracy.ToString();
                         disableCell(row, 3);
                         break;
+                    case "bli":
+                        disableCell(row, 1);
+                        row.Cells[2].Value = ((BlindEnemy)e).Accuracy.ToString();
+                        disableCell(row, 3);
+                        break;
+                    case "bliself":
+                        disableCell(row, 1);
+                        row.Cells[2].Value = ((BlindSelf)e).Accuracy.ToString();
+                        disableCell(row, 3);
+                        break;
                     case "cleanse":
                         disableCell(row, 1);
                         disableCell(row, 2);
@@ -135,6 +145,12 @@ namespace ATCombatSimulator
                     case "parself":
                         e = new ParalyzeSelf(_acc);
                         break;
+                    case "bli":
+                        e = new BlindEnemy(_acc);
+                        break;
+                    case "bliself":
+                        e = new BlindSelf(_acc);
+                        break;
                     case "cleanse":
                         e = new Cleanse();
                         break;
@@ -160,7 +176,7 @@ namespace ATCombatSimulator
                 dataGridView1.Rows.Add();
                 int rowNum = dataGridView1.RowCount - 1;
                 dataGridView1.Rows[rowNum].Cells[0].Value = es.effectType;
-                if(es.effectType=="psn"||es.effectType=="psnself"|| es.effectType =="par"|| es.effectType =="parself")
+                if(es.effectType=="psn"||es.effectType=="psnself"||es.effectType =="par"||es.effectType =="parself" || es.effectType == "bli" || es.effectType == "bliself")
                 {
                     disableCell(rowNum, 1);
                     disableCell(rowNum, 3);

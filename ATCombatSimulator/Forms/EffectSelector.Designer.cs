@@ -40,6 +40,8 @@
             this.radioButtonCleanse = new System.Windows.Forms.RadioButton();
             this.radioButtonPar = new System.Windows.Forms.RadioButton();
             this.radioButtonParself = new System.Windows.Forms.RadioButton();
+            this.radioButtonBli = new System.Windows.Forms.RadioButton();
+            this.radioButtonBliself = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // radioButtonPdmg
@@ -96,7 +98,7 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(14, 254);
+            this.buttonOK.Location = new System.Drawing.Point(13, 174);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 1;
@@ -106,7 +108,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(147, 254);
+            this.buttonCancel.Location = new System.Drawing.Point(198, 174);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 1;
@@ -117,7 +119,7 @@
             // radioButtonPsn
             // 
             this.radioButtonPsn.AutoSize = true;
-            this.radioButtonPsn.Location = new System.Drawing.Point(13, 128);
+            this.radioButtonPsn.Location = new System.Drawing.Point(174, 13);
             this.radioButtonPsn.Name = "radioButtonPsn";
             this.radioButtonPsn.Size = new System.Drawing.Size(91, 17);
             this.radioButtonPsn.TabIndex = 2;
@@ -127,7 +129,7 @@
             // radioButtonPsnself
             // 
             this.radioButtonPsnself.AutoSize = true;
-            this.radioButtonPsnself.Location = new System.Drawing.Point(13, 151);
+            this.radioButtonPsnself.Location = new System.Drawing.Point(174, 36);
             this.radioButtonPsnself.Name = "radioButtonPsnself";
             this.radioButtonPsnself.Size = new System.Drawing.Size(76, 17);
             this.radioButtonPsnself.TabIndex = 2;
@@ -137,7 +139,7 @@
             // radioButtonCleanse
             // 
             this.radioButtonCleanse.AutoSize = true;
-            this.radioButtonCleanse.Location = new System.Drawing.Point(13, 220);
+            this.radioButtonCleanse.Location = new System.Drawing.Point(13, 128);
             this.radioButtonCleanse.Name = "radioButtonCleanse";
             this.radioButtonCleanse.Size = new System.Drawing.Size(145, 17);
             this.radioButtonCleanse.TabIndex = 2;
@@ -147,7 +149,7 @@
             // radioButtonPar
             // 
             this.radioButtonPar.AutoSize = true;
-            this.radioButtonPar.Location = new System.Drawing.Point(13, 174);
+            this.radioButtonPar.Location = new System.Drawing.Point(174, 59);
             this.radioButtonPar.Name = "radioButtonPar";
             this.radioButtonPar.Size = new System.Drawing.Size(99, 17);
             this.radioButtonPar.TabIndex = 2;
@@ -157,21 +159,43 @@
             // radioButtonParself
             // 
             this.radioButtonParself.AutoSize = true;
-            this.radioButtonParself.Location = new System.Drawing.Point(13, 197);
+            this.radioButtonParself.Location = new System.Drawing.Point(174, 82);
             this.radioButtonParself.Name = "radioButtonParself";
             this.radioButtonParself.Size = new System.Drawing.Size(84, 17);
             this.radioButtonParself.TabIndex = 2;
             this.radioButtonParself.Text = "Paralyze self";
             this.radioButtonParself.UseVisualStyleBackColor = true;
             // 
+            // radioButtonBli
+            // 
+            this.radioButtonBli.AutoSize = true;
+            this.radioButtonBli.Location = new System.Drawing.Point(174, 105);
+            this.radioButtonBli.Name = "radioButtonBli";
+            this.radioButtonBli.Size = new System.Drawing.Size(82, 17);
+            this.radioButtonBli.TabIndex = 2;
+            this.radioButtonBli.Text = "Blind enemy";
+            this.radioButtonBli.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonBliself
+            // 
+            this.radioButtonBliself.AutoSize = true;
+            this.radioButtonBliself.Location = new System.Drawing.Point(174, 128);
+            this.radioButtonBliself.Name = "radioButtonBliself";
+            this.radioButtonBliself.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonBliself.TabIndex = 2;
+            this.radioButtonBliself.Text = "Blind self";
+            this.radioButtonBliself.UseVisualStyleBackColor = true;
+            // 
             // EffectSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 289);
+            this.ClientSize = new System.Drawing.Size(289, 219);
             this.Controls.Add(this.radioButtonCleanse);
+            this.Controls.Add(this.radioButtonBliself);
             this.Controls.Add(this.radioButtonParself);
             this.Controls.Add(this.radioButtonPsnself);
+            this.Controls.Add(this.radioButtonBli);
             this.Controls.Add(this.radioButtonPar);
             this.Controls.Add(this.radioButtonPsn);
             this.Controls.Add(this.buttonCancel);
@@ -202,5 +226,7 @@
         private System.Windows.Forms.RadioButton radioButtonCleanse;
         private System.Windows.Forms.RadioButton radioButtonPar;
         private System.Windows.Forms.RadioButton radioButtonParself;
+        private System.Windows.Forms.RadioButton radioButtonBli;
+        private System.Windows.Forms.RadioButton radioButtonBliself;
     }
 }

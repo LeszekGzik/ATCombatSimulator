@@ -57,10 +57,19 @@ namespace ATCombatSimulator.Forms
             {
                 effectType = "parself";
             }
+            else if (radioButtonBli.Checked)
+            {
+                effectType = "bli";
+            }
+            else if (radioButtonBliself.Checked)
+            {
+                effectType = "bliself";
+            }
             else if (radioButtonCleanse.Checked)
             {
                 effectType = "cleanse";
             }
+
 
             this.DialogResult = DialogResult.OK;
             this.Close();

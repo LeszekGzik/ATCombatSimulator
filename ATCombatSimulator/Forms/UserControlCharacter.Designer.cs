@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxCharacter = new System.Windows.Forms.GroupBox();
+            this.labelPar = new System.Windows.Forms.Label();
             this.labelPsn = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@
             this.numericUpDownLevel = new System.Windows.Forms.NumericUpDown();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.labelPar = new System.Windows.Forms.Label();
+            this.labelBli = new System.Windows.Forms.Label();
             this.groupBoxCharacter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAgi)).BeginInit();
@@ -73,6 +74,7 @@
             // 
             // groupBoxCharacter
             // 
+            this.groupBoxCharacter.Controls.Add(this.labelBli);
             this.groupBoxCharacter.Controls.Add(this.labelPar);
             this.groupBoxCharacter.Controls.Add(this.labelPsn);
             this.groupBoxCharacter.Controls.Add(this.buttonDelete);
@@ -110,11 +112,22 @@
             this.groupBoxCharacter.TabStop = false;
             this.groupBoxCharacter.Text = "Character";
             // 
+            // labelPar
+            // 
+            this.labelPar.AutoSize = true;
+            this.labelPar.ForeColor = System.Drawing.Color.Goldenrod;
+            this.labelPar.Location = new System.Drawing.Point(162, 201);
+            this.labelPar.Name = "labelPar";
+            this.labelPar.Size = new System.Drawing.Size(71, 13);
+            this.labelPar.TabIndex = 8;
+            this.labelPar.Text = "PARALYZED";
+            this.labelPar.Visible = false;
+            // 
             // labelPsn
             // 
             this.labelPsn.AutoSize = true;
             this.labelPsn.ForeColor = System.Drawing.Color.SeaGreen;
-            this.labelPsn.Location = new System.Drawing.Point(162, 179);
+            this.labelPsn.Location = new System.Drawing.Point(162, 180);
             this.labelPsn.Name = "labelPsn";
             this.labelPsn.Size = new System.Drawing.Size(63, 13);
             this.labelPsn.TabIndex = 8;
@@ -456,16 +469,16 @@
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
-            // labelPar
+            // labelBli
             // 
-            this.labelPar.AutoSize = true;
-            this.labelPar.ForeColor = System.Drawing.Color.Goldenrod;
-            this.labelPar.Location = new System.Drawing.Point(162, 199);
-            this.labelPar.Name = "labelPar";
-            this.labelPar.Size = new System.Drawing.Size(71, 13);
-            this.labelPar.TabIndex = 8;
-            this.labelPar.Text = "PARALYZED";
-            this.labelPar.Visible = false;
+            this.labelBli.AutoSize = true;
+            this.labelBli.ForeColor = System.Drawing.Color.BlueViolet;
+            this.labelBli.Location = new System.Drawing.Point(162, 221);
+            this.labelBli.Name = "labelBli";
+            this.labelBli.Size = new System.Drawing.Size(54, 13);
+            this.labelBli.TabIndex = 8;
+            this.labelBli.Text = "BLINDED";
+            this.labelBli.Visible = false;
             // 
             // UserControlCharacter
             // 
@@ -522,5 +535,6 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label labelPsn;
         private System.Windows.Forms.Label labelPar;
+        private System.Windows.Forms.Label labelBli;
     }
 }

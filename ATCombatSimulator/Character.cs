@@ -30,6 +30,7 @@ namespace ATCombatSimulator
 
         public bool poisoned;
         public bool paralyzed;
+        public bool blinded;
         public bool cantmove;
 
         public Character()
@@ -138,6 +139,12 @@ namespace ATCombatSimulator
                             break;
                         case "parself":
                             e = new ParalyzeSelf(_acc);
+                            break;
+                        case "bli":
+                            e = new BlindEnemy(_acc);
+                            break;
+                        case "bliself":
+                            e = new BlindSelf(_acc);
                             break;
                         case "cleanse":
                             e = new Cleanse();
@@ -268,6 +275,7 @@ namespace ATCombatSimulator
         {
             poisoned = false;
             paralyzed = false;
+            blinded = false;
         }
     }
 }

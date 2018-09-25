@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability.cs" />
+    <Compile Include="Effects\BlindEnemy.cs" />
+    <Compile Include="Effects\BlindSelf.cs" />
     <Compile Include="Effects\Cleanse.cs" />
     <Compile Include="Effects\ParalyzeEnemy.cs" />
     <Compile Include="Effects\ParalyzeSelf.cs" />

@@ -22,5 +22,8 @@
       <effect type="mdmg" pow="2" acc="100" crit="1" />
       <effect type="heal" pow="6" acc="100" crit="1" />
     </ability>
+    <ability name="Dark fog" sp="2">
+      <effect type="bli" acc="60" />
+    </ability>
   </abilities>
 </character>

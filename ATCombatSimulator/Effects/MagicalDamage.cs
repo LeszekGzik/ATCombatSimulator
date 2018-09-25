@@ -39,6 +39,7 @@ namespace ATCombatSimulator.Effects
         {
             String result = "";
             int hitPercent = Accuracy + 2 * user.AGI - 2 * target.AGI;
+            if (user.blinded) { hitPercent /= 2; }
             int critPercent = Crit + user.LCK - target.LCK;
             double damage = (user.MATK * (10 + user.level) * Power) / (10 * target.MDEF);
 

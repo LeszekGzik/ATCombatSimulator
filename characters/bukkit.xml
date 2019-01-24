@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<character name="Wiliam">
+  <stats>
+    <stat key="level" value="20" />
+    <stat key="ATK" value="15" />
+    <stat key="DEF" value="17" />
+    <stat key="VIT" value="16" />
+    <stat key="SKL" value="9" />
+    <stat key="MATK" value="10" />
+    <stat key="MDEF" value="15" />
+    <stat key="AGI" value="8" />
+    <stat key="LCK" value="11" />
+  </stats>
+  <abilities>
+    <ability name="Shield slam" sp="4">
+      <effect type="par" acc="33" />
+      <effect type="heal" pow="5" acc="200" crit="0" />
+    </ability>
+    <ability name="Slash" sp="0">
+      <effect type="pdmg" pow="5" acc="80" crit="4" />
+    </ability>
+  </abilities>
+</character>

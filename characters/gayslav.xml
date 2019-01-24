@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<character name="August Gaiswav">
+  <stats>
+    <stat key="level" value="20" />
+    <stat key="ATK" value="15" />
+    <stat key="DEF" value="10" />
+    <stat key="VIT" value="40" />
+    <stat key="SKL" value="15" />
+    <stat key="MATK" value="12" />
+    <stat key="MDEF" value="10" />
+    <stat key="AGI" value="20" />
+    <stat key="LCK" value="15" />
+  </stats>
+  <abilities>
+    <ability name="Flurry of blows" sp="3">
+      <effect type="pdmg" pow="1" acc="70" crit="0" />
+      <effect type="pdmg" pow="2" acc="70" crit="5" />
+      <effect type="pdmg" pow="3" acc="70" crit="10" />
+      <effect type="pdmg" pow="4" acc="70" crit="15" />
+    </ability>
+    <ability name="Eye gouge" sp="2">
+      <effect type="pdmg" pow="2" acc="80" crit="10" />
+      <effect type="bli" acc="50" />
+    </ability>
+    <ability name="Bolt blitz" sp="3">
+      <effect type="pdmg" pow="4" acc="80" crit="4" />
+      <effect type="par" acc="50" />
+    </ability>
+    <ability name="Meditate" sp="0">
+      <effect type="spr" pow="5" acc="200" crit="0" />
+    </ability>
+    <ability name="Weak stab" sp="0">
+      <effect type="pdmg" pow="2" acc="70" crit="0" />
+    </ability>
+    <ability name="Coup de grace" sp="10">
+      <effect type="pdmg" pow="10" acc="50" crit="25" />
+    </ability>
+  </abilities>
+</character>
